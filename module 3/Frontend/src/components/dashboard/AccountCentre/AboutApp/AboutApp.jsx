@@ -25,7 +25,7 @@ export default function AboutApp() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5050/api/about")
+      .get("/api/about")
       .then((res) => {
         if (res?.data) {
           // CHANGED: Replaced merge logic with explicit mapping
