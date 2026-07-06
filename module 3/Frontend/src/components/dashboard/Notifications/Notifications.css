@@ -1,0 +1,617 @@
+@import "tailwindcss";
+/* =====================
+   NOTIFICATIONS LIST
+===================== */
+
+.notifications-list {
+  @apply flex flex-col gap-[15px];
+}
+
+/* =====================
+   NOTIFICATION ITEM
+===================== */
+
+.notification-item {
+  @apply flex items-start gap-3 cursor-pointer relative;
+}
+
+.notification-item.unread {
+  @apply p-[30px] bg-transparent;
+}
+
+.notification-dot {
+  @apply w-2 h-2 bg-[#4F8EF7] rounded-full absolute top-3 right-3;
+}
+
+/* =====================
+   ICON
+===================== */
+
+.notification-icon {
+  @apply w-10 h-10 min-w-[40px] flex items-center justify-center bg-indigo-50 text-indigo-500 rounded-xl;
+}
+
+.notification-icon svg {
+  @apply w-6 h-6;
+}
+
+/* =====================
+   CONTENT
+===================== */
+
+.notification-content {
+  @apply flex flex-col gap-[4px] flex-1;
+}
+
+/* TITLE (main line) */
+.notification-title {
+  @apply text-[14px] font-medium text-[#111111] leading-[18px];
+}
+
+/* META ROW (date • action • project) */
+.notification-meta {
+  @apply flex items-center flex-wrap text-[12px] text-[#6B7280] leading-[16px];
+}
+
+/* DOT BETWEEN ITEMS */
+.notification-meta .dot {
+  @apply mx-[4px] text-gray-400;
+}
+
+/* PROJECT NAME */
+.project-name {
+  @apply text-[#374151] truncate max-w-[140px];
+}
+
+/* =====================
+   REQUEST BUTTONS
+===================== */
+
+.request-actions {
+  @apply flex gap-2.5 mt-2.5;
+}
+
+.reject-btn {
+  @apply px-3.5 py-1.5 rounded-2xl border border-gray-300 bg-white text-gray-600 text-[13px] font-medium cursor-pointer transition;
+}
+
+.reject-btn:hover {
+  @apply bg-gray-50 border-gray-400;
+}
+
+.accept-btn {
+  @apply px-3.5 py-1.5 rounded-2xl border border-blue-300 bg-[#1F6FEB] text-[#FFFFFF] text-[13px] font-medium cursor-pointer transition;
+}
+
+
+.reject-btn:disabled,
+.accept-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+/* .accept-btn:hover {
+  @apply bg-blue-100 border-blue-400;
+} */
+
+/* =====================
+   OVERLAY
+===================== */
+
+.notification-overlay {
+  @apply absolute top-[88px] right-[128px] w-[383px] z-[1000];
+}
+
+.notification-overlay-content {
+  @apply relative bg-white rounded-3xl w-full h-[594px] max-h-[90vh] flex flex-col overflow-hidden border border-gray-200 pointer-events-auto;
+  box-shadow: 0px 0px 16px rgba(0,0,0,0.04), 0px 4px 4px rgba(0,0,0,0.12);
+}
+
+/* =====================
+   HEADER
+===================== */
+
+.notification-overlay-header {
+  @apply flex items-center justify-between px-6 py-5;
+}
+
+.header-actions {
+  @apply flex items-center gap-3;
+}
+
+.select-btn:hover{
+  @apply cursor-pointer;
+}
+
+.cancel-btn {
+  @apply flex items-center justify-center
+         h-[24px] px-[8px] py-[4px]
+         rounded-full
+         border border-[0.5px] border-[#E2E8F0]
+         text-[12px] font-medium text-[#111111]
+         cursor-pointer
+         bg-[#F8FAFC];
+}
+
+
+.cancel-btn:hover{
+  @apply cursor-pointer;
+}
+
+.settings-btn {
+  @apply w-[13.36px] h-[14.17px] flex items-center justify-center 
+         rounded-full cursor-pointer;
+}
+
+.settings-icon-wrapper {
+  @apply w-[24px] h-[24px] flex items-center justify-center;
+}
+
+.settings-icon-wrapper svg {
+  @apply w-[20px] h-[20px] text-slate-800;
+  stroke-width: 1.5; /* close to figma 1px */
+}
+
+/* ========================
+
+Header right side
+
+=========================== */
+
+
+
+.select-icon-btn {
+  @apply flex items-center justify-center w-[20px] h-[20px] cursor-pointer;
+}
+
+.figma-checkbox {
+  @apply relative w-[20px] h-[20px];
+}
+
+/* OUTER CIRCLE */
+.select-icon-btn .checkbox-circle {
+  @apply absolute w-[13.33px] h-[13.33px] top-[3.33px] left-[3.33px] rounded-full border border-[#1E293B];
+}
+
+
+/* CHECK MARK */
+.select-icon-btn .checkbox-tick {
+  @apply absolute top-[6px] left-[4px] w-[12px] h-[8px] border-[#1E293B];
+}
+
+
+
+
+/* ACTIVE STATE */
+.checkbox-check.active {
+  @apply block;
+}
+
+/* =====================
+   SCROLL LIST
+===================== */
+
+.notification-overlay .notifications-list {
+  @apply flex-1 min-h-0 overflow-y-auto flex flex-col gap-3;
+}
+
+
+/* Hide scrollbar manually */
+.notification-overlay .notifications-list::-webkit-scrollbar {
+  display: none;
+}
+
+.request-dot {
+  @apply w-[6px] h-[6px] bg-blue-500 rounded-full ml-1;
+}
+
+
+/* =====================
+   ITEM (OVERLAY)
+===================== */
+
+.notification-overlay .notification-item {
+  @apply py-4 px-6 border-b border-gray-300;
+}
+
+
+
+/* =====================
+   TABS
+===================== */
+
+.notification-tabs {
+  @apply flex gap-3 px-6 border-b border-gray-300;
+}
+
+.tab-item {
+  @apply flex items-center gap-1.5 text-sm font-normal text-[#212121] px-2 py-3 relative cursor-pointer transition;
+}
+
+.tab-item.active {
+  @apply text-blue-500 font-semibold;
+}
+
+.tab-item.active::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 rounded-t;
+}
+
+/* =====================
+   BADGE
+===================== */
+
+.notification-badge {
+  @apply flex items-center justify-center
+         w-[14px] h-[14px]
+         rounded-full
+         bg-indigo-100 text-indigo-700
+         text-[10px] leading-none font-normal;
+         font-weight: 400;
+         padding-top: 3px
+}
+
+.tab-item.active .notification-badge {
+  @apply bg-blue-500 text-white;
+}
+
+.tab-item[data-tab="Unread"] .notification-badge {
+  @apply bg-red-300 text-red-800;
+}
+
+
+/* =====================
+   EMPTY STATE (FIGMA MATCH)
+===================== */
+
+.loading-container {
+  @apply flex items-center justify-center h-full text-gray-400 text-sm;
+}
+
+.no-notifications-container {
+  @apply w-[328px] h-[244px] flex flex-col items-center 
+         justify-center gap-6 py-6 px-4 rounded-2xl mx-auto mt-[80px];
+}
+
+/* IMAGE */
+.no-notifications-image img {
+  @apply w-[150px] h-[100px];
+}
+
+/* TEXT BLOCK */
+.no-notifications-content {
+  @apply text-center;
+}
+
+.no-notifications-title {
+  @apply text-xl font-semibold leading-6 tracking-normal text-center text-slate-600;
+}
+
+.no-notifications-subtitle {
+  @apply text-sm font-normal leading-5 tracking-normal text-center text-slate-500 mt-1;
+}
+
+.no-notifications-description {
+  @apply text-sm leading-5 text-center text-slate-400 mt-1;
+}
+
+/* =====================
+   CHECKBOX
+===================== */
+
+.notification-checkbox {
+  @apply w-[20px] h-[20px] mt-2 cursor-pointer rounded-full border border-gray-300 appearance-none flex items-center justify-center;
+}
+
+.notification-checkbox:checked {
+  @apply bg-blue-500 border-blue-500;
+}
+
+/* inner dot */
+.notification-checkbox:checked::after {
+  content: "";
+  @apply w-2 h-2 bg-white rounded-full;
+}
+
+
+
+/* CUSTOM CHECKBOX (FIGMA STYLE) */
+.custom-checkbox {
+  @apply relative w-[20px] h-[20px] cursor-pointer flex items-center justify-center mt-2;
+}
+
+/* outer circle */
+.custom-checkbox .checkbox-circle {
+  @apply absolute w-full h-full rounded-full border border-gray-400 bg-white;
+}
+
+/* tick */
+.custom-checkbox .checkbox-tick {
+  @apply absolute w-[12px] h-[8px] opacity-0;
+}
+
+/* ✅ CHECKED STATE */
+.custom-checkbox.checked .checkbox-circle {
+  @apply bg-[#1F6FEB] border border-none;
+}
+
+.custom-checkbox.checked .checkbox-tick {
+  @apply opacity-100;
+}
+/* =====================
+   ACTION BAR
+===================== */
+.selectall .select{
+  @apply mt-2 
+}
+
+
+.notification-actions {
+  @apply flex items-center justify-between px-4 py-3 border-t border-gray-200 bg-gray-50 rounded-b-3xl;
+}
+
+.notification-actions label {
+  @apply flex items-center gap-2 text-[13px] text-gray-700 cursor-pointer;
+}
+
+.notification-actions input {
+  @apply w-4 h-4;
+  accent-color: #3B82F6;
+}
+
+.actions-right {
+  @apply flex items-center gap-2.5;
+}
+
+
+.mark-read-btn {
+  @apply flex items-center gap-1.5 
+         px-3 py-1.5 
+         rounded-full
+         border border-[#E2E8F0]
+         bg-[#F8FAFC]
+         text-[#1F6FEB]
+         text-[13px] font-medium
+         cursor-pointer
+         transition-all duration-200;
+}
+
+.mark-read-btn:hover {
+  @apply bg-gray-100 border-gray-300;
+}
+
+.mark-read-icon {
+  @apply w-[14px] h-[14px] text-[#1F6FEB];
+}
+
+/* .delete-btn {
+  @apply flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl border border-red-200 bg-red-50 text-red-600 text-xs font-medium cursor-pointer transition;
+}
+
+.delete-btn:hover {
+  @apply bg-red-100;
+} */
+
+.delete-btn {
+  @apply flex items-center justify-center
+         w-9 h-9
+         cursor-pointer;
+}
+
+
+.delete-icon {
+  @apply w-[16px] h-[16px] text-red-600;
+}
+
+/* =====================
+   TOAST CONTAINER
+===================== */
+.toast-container {
+  @apply absolute bottom-4 left-1/2 -translate-x-1/2 w-full flex justify-center;
+}
+
+/* =====================
+   TOAST BOX
+===================== */
+.toast {
+  @apply flex items-center justify-between gap-2
+         w-[351px] h-[40px]
+         px-[18px] py-[12px]
+         rounded-full
+         bg-[#FFFFFF] text-[#111111]
+         pointer-events-auto
+         shadow-[0px_0px_24px_0px_#1F6FEB2E,0px_0px_4px_0px_#1F6FEB3D];
+}
+
+.toast-content {
+  @apply flex items-center gap-1;
+}
+
+
+/* ICON SIZE
+.toast-icon {
+  @apply w-4 h-4;
+} */
+
+/* =====================
+   DELETE TOAST (RED GLOW)
+===================== */
+.toast-delete {
+  @apply shadow-[0px_0px_16px_0px_#EB1F1F17,0px_0px_4px_0px_#EB1F1F29] border border-[#FCA5A5];
+
+}
+
+/* =====================
+   BUTTON
+===================== */
+.toast button {
+  @apply bg-transparent border-none text-[#1F6FEB] cursor-pointer font-medium;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+/* ========================
+
+Dark Mode
+
+=========================== */
+
+/* ========================
+   DARK MODE
+=========================== */
+
+.dark .notification-overlay-header{
+  @apply text-[#FFFFFF];
+}
+
+.dark .checkbox-tick {
+  @apply text-white;
+}
+
+.dark .checkbox-circle{
+  @apply border-[#CBD5E1]
+}
+
+.dark .settings-icon-wrapper img {
+  filter: brightness(0) invert(1);
+}
+
+.dark .notification-overlay-content {
+  @apply bg-[#0F172A] border-gray-700;
+}
+
+.dark .notification-item {
+  @apply border-gray-700;
+}
+
+.dark .notification-title {
+  @apply text-gray-100;
+}
+
+.dark .notification-meta {
+  @apply text-gray-400;
+}
+
+.dark .project-name {
+  @apply text-gray-300;
+}
+
+.dark .notification-icon {
+  @apply bg-[#1E293B] text-blue-400;
+}
+
+/* DOT */
+.dark .notification-dot {
+  @apply bg-blue-400;
+}
+
+/* TABS */
+.dark .notification-tabs {
+  @apply border-gray-700;
+}
+
+.dark .tab-item {
+  @apply text-gray-300;
+}
+
+.dark .tab-item.active {
+  @apply text-blue-400;
+}
+
+/* HEADER */
+.dark .cancel-btn {
+  @apply bg-[#1E293B] border-gray-600 text-gray-200;
+}
+
+/* Select All text */
+.dark .selectall .select{
+  @apply mt-2 text-[#fff]
+}
+
+/* ACTION BAR */
+.dark .notification-actions {
+  @apply bg-[#020817] border-gray-700;
+}
+
+/* MARK READ */
+.dark .mark-read-btn {
+  @apply bg-[#1E293B] border-gray-600 text-blue-400;
+}
+
+.dark .mark-read-btn:hover {
+  @apply bg-[#334155];
+}
+
+/* DELETE */
+.dark .delete-icon {
+  @apply text-red-400;
+}
+
+/* REQUEST BUTTONS */
+.dark .reject-btn {
+  @apply bg-[#1E293B] border-gray-600 text-gray-300;
+}
+
+.dark .reject-btn:hover {
+  @apply bg-[#334155];
+}
+
+.dark .accept-btn {
+  @apply bg-blue-600 border-blue-500;
+}
+
+/* EMPTY STATE */
+.dark .no-notifications-title {
+  @apply text-gray-200;
+}
+
+.dark .no-notifications-subtitle {
+  @apply text-gray-400;
+}
+
+.dark .no-notifications-description {
+  @apply text-gray-500;
+}
+
+/* CHECKBOX */
+.dark .custom-checkbox .checkbox-circle {
+  @apply border-[#94A3B8] bg-[#1E293B];
+}
+
+.dark .custom-checkbox.checked .checkbox-circle {
+  @apply bg-[#1F6FEB] border-none;
+}
+
+.dark .notification-meta span{
+  @apply text-[#CBD5E1]
+}
+
+/* ========================
+   TOAST DARK MODE
+=========================== */
+
+/* TOAST BASE */
+.dark .toast {
+  @apply bg-[#020617] text-[#EFEFF1];
+}
+
+/* DELETE TOAST (keep border same) */
+/* .dark .toast-delete {
+  @apply border border-[#FCA5A5];
+} */
+
+/* BUTTON */
+.dark .toast button {
+  @apply text-[#EFEFF1];
+}
+
+/* ICON (optional if SVG or img needs adjustment) */
+/* .dark .toast-icon {
+  filter: brightness(0) invert(1);
+} */

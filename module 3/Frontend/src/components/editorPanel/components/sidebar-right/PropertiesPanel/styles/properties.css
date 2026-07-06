@@ -1,0 +1,470 @@
+@reference "tailwindcss";
+
+/* ====================
+
+  Properties Panel
+
+====================== */
+
+/* Main Panel */
+.properties-panel {
+  @apply absolute right-[110%] w-[360px]  bg-white rounded-2xl border border-gray-200;
+  box-shadow: 0px 0px 24px rgba(143, 143, 143, 0.12),
+    0px 0px 4px rgba(143, 143, 143, 0.16);
+  
+  height: calc((100vh / 1024px) * 700px);
+  top: 50%;
+  transform: translateY(-50%); 
+  overflow: auto;
+}
+
+.properties-panel::-webkit-scrollbar{
+  display: none;
+}
+
+/* Header */
+.properties-header {
+  @apply flex items-center justify-between h-[56px] p-4;
+}
+
+
+.properties-header-title {
+  font-family: "TypeFace Heading", sans-serif;
+  font-weight: 600;
+
+  font-size: 18px;     /* text-md */
+  line-height: 1;      /* 100% */
+  letter-spacing: 0;
+
+  color: #020617;      /* Neutral-950 */
+}
+
+.properties-close-btn {
+  /* @apply text-gray-400 hover:text-gray-600 text-lg cursor-pointer; */
+  @apply relative h-[24px] w-[24px] bg-[#F8FAFC] cursor-pointer;
+  border-radius: 100%;
+}
+
+.properties-close-btn img {
+  @apply relative top-[5.5px];
+}
+
+/* Content Scroll */
+.properties-content {
+  @apply flex flex-col gap-[9px] overflow-y-auto;
+
+  /* max-height: calc(80vh - 56px); subtract header height */
+}
+
+/* Scrollbar (optional - cleaner UI) */
+.properties-content::-webkit-scrollbar {
+  width: 2px;
+}
+
+.properties-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.properties-panel .appearance-section,
+.properties-panel .transform-container {
+  transition: all 0.2s ease;
+}
+
+
+
+
+/* ====================
+
+  Alignment Section
+
+====================== */
+
+.properties-panel .align-section {
+  @apply w-full px-4 py-2;
+}
+
+/* Subsection */
+.properties-panel .align-subsection {
+  @apply flex flex-col gap-3;
+}
+
+/* Top Row (Label + Dropdown) */
+.properties-panel .align-top {
+  @apply flex items-center justify-between;
+}
+
+:root {
+  --text-sm: 14px;
+  --neutral-900: #0F172A;
+}
+
+.properties-panel .section-title {
+  font-family: "TypeFace Heading", sans-serif;
+  font-weight: 500;
+  font-size: var(--text-sm);
+  line-height: 1;
+  color: var(--neutral-900);
+}
+
+
+/* Dropdown Container */
+.properties-panel .dropdown-container {
+  @apply flex items-center;
+}
+
+.properties-panel .selection-dropdown {
+  @apply bg-gray-100 text-xs px-3 py-1 rounded-full outline-none cursor-pointer;
+}
+
+/* Content Container */
+.properties-panel .align-content {
+  width: 328px;
+  height: 32px;
+}
+
+/* Wrapper */
+.properties-panel .align-button-wrapper {
+  @apply flex items-center;
+  gap: 8px;
+}
+
+/* Base Group */
+.properties-panel .align-group {
+  @apply flex rounded-full overflow-hidden;
+  height: 32px;
+}
+
+/* FIXED WIDTHS (VERY IMPORTANT) */
+.properties-panel .group-horizontal {
+  width: 140px;
+}
+
+.properties-panel .group-vertical {
+  width: 140px;
+}
+
+.properties-panel .group-small {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Buttons (FIX SIZE) */
+/* Base Button */
+.properties-panel .align-btn {
+  width: 46.6667px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 8px;
+  gap: 8px;
+
+  background: #fff;
+  border-color: #CBD5E1;
+  border-style: solid;
+
+  transition: all 0.2s ease;
+}
+
+/* LEFT BUTTON */
+.properties-panel .align-first {
+  border-width: 0.5px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+/* MIDDLE BUTTON */
+.properties-panel .align-middle {
+  border-top-width: 0.5px;
+  border-bottom-width: 0.5px;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+/* RIGHT BUTTON */
+.properties-panel .align-last {
+  border-width: 0.5px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+/* Hover */
+.properties-panel .align-btn:hover {
+  background: #F1F5F9;
+}
+
+/* Active */
+.properties-panel .align-btn.active {
+  background: #E2E8F0;
+}
+
+
+/* Make it standalone button */
+.properties-panel .group-small .align-btn {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 100%; /* 👈 match Figma rounded square */
+}
+
+/* FIX hover overflow */
+.properties-panel .group-small .align-btn:hover {
+  background: #E2E8F0;
+}
+
+
+
+.properties-panel .section-collapse img,
+.properties-panel .transform-dropdown img {
+  transition: transform 0.2s ease;
+}
+
+.properties-panel .rotate img {
+  transform: rotate(-90deg);
+}
+
+
+/* ====================
+   TRANSFORM SECTION
+==================== */
+
+/* Main Container */
+.properties-panel .transform-container {
+  @apply w-full px-4 py-2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Header */
+.properties-panel .transform-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.properties-panel .transform-title {
+ @apply text-sm;
+  font-weight: 500;
+  color:#0F172A;
+}
+
+.properties-panel .transform-dropdown {
+  color: #6b7280;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Bottom Row */
+.properties-panel .transform-bottom {
+  display: flex;
+  gap: 12px;
+}
+
+
+/* ====================
+   SHARED UTILITIES (ONLY ONCE)
+==================== */
+
+/* Layout */
+.properties-panel .column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.properties-panel .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Label */
+.properties-panel .section-label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Input pill */
+.properties-panel .input-pill {
+  display: flex;
+  align-items: center;
+  /* background: #f3f4f6; */
+  border: 0.5px solid #CBD5E1;
+  border-radius: 100px;
+  padding: 8px 12px;
+  flex: 1;
+}
+
+.properties-panel .input-label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-right: 8px;
+}
+
+.properties-panel .input-label img{
+  @apply w-[16px] h-[16px];
+}
+
+.properties-panel .input-pill input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Buttons */
+.properties-panel .icon-btn {
+  padding: 8px;
+  /* background: #f3f4f6; */
+  /* border-radius: 9999px; */
+  /* border: none; */
+  /* color: #6b7280; */
+  cursor: pointer;
+}
+
+.properties-panel .icon-btn img{
+  @apply w-[18px] h-[18px];
+}
+
+.properties-panel .icon-btn-active {
+  padding: 8px;
+  background: #dbeafe;
+  border-radius: 100px;
+  border: none;
+  /* color: #3b82f6; */
+  cursor: pointer;
+}
+
+.properties-panel .icon-btn-active img{
+  @apply w-[18px] h-[12px];
+}
+
+
+/* ====================
+   COMPONENT-SPECIFIC
+==================== */
+
+/* Rotation */
+.properties-panel .reset-btn {
+  font-size: 14px;
+  color: #6b7280;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  
+}
+
+.properties-panel .reset-btn img{
+  @apply w-[24px] h-[24px];
+}
+
+/* Flip */
+.properties-panel .flip-btn {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 100px;
+  border: 0.5px solid #CBD5E1;
+  font-size: 14px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.properties-panel .flip-btn img{
+  margin: auto;
+}
+
+.properties-panel .flip-btn:hover {
+  background: #e5e7eb;
+}
+
+
+
+
+/* ======================
+
+    Dark Mode
+
+========================== */
+
+.dark .properties-panel{
+  background: #0F172A;
+  border: 0.5px solid #334155;
+}
+
+.dark .properties-header .properties-header-title{
+  color: #FFFFFF;
+
+}
+
+.dark .properties-close-btn{
+  background: #1E293B;
+}
+
+.dark .align-section .section-title{
+  color: #E2E8F0;
+}
+
+.dark .properties-panel .selection-dropdown{
+  background: #1E293B;
+}
+
+.dark .properties-panel .selection-dropdown option{
+  color: #E2E8F0;
+}
+
+.dark .properties-panel .align-btn{
+  background: transparent;
+  border: 1px solid #475569;
+}
+
+
+
+.dark .properties-panel .section-title{
+  color: #E2E8F0;
+}
+
+.dark .properties-panel .section-label{
+  color: #CBD5E1;
+}
+
+.dark .properties-panel .input-pill{
+  border: 1px solid #475569;
+}
+
+.dark .properties-panel .flip-btn{
+  border: 1px solid #475569;
+}
+
+.dark .control-title{
+  color: #CBD5E1;
+}
+
+.dark .input-field{
+  border: 1px solid #475569;
+}
+
+.dark .blend-select{
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid #475569;
+}
+
+
+.dark .input-container{
+  background: transparent;
+  border: 1px solid #475569;
+}
+
+.dark .effect-item{
+  background: transparent;
+  border: 1px solid #475569;
+}

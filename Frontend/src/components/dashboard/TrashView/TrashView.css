@@ -1,0 +1,486 @@
+/* --- HERO SECTION --- */
+.rd-hero-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  background-image: url("../../../assets/light_pattern.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 30px;
+}
+
+.rd-hero-img {
+  position: absolute;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.rd-img-left { width: 140px; top: 40px; left: 8%; }
+.rd-img-right-top { width: 100px; top: 40px; right: 12%; animation-delay: 1s; }
+.rd-img-right-bottom { width: 120px; bottom: 40px; right: 8%; animation-delay: 2s; }
+
+.rd-dashboard-title { font-size: 32px; font-weight: 600; margin-bottom: 24px; color: #1a1a1a; }
+.rd-dashboard-title span {     
+  background: linear-gradient(90deg, #41C6FF 5.29%, #1F6FEB 69.71%, #26C6DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
+/* --- SEARCH BAR --- */
+.rd-search-bar {
+  width: 100%;
+  max-width: 420px;
+  transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 auto;
+}
+
+.rd-search-bar--expanded {
+  max-width: 620px;
+}
+
+.rd-search-container {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 12px;
+  height: 54px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.rd-search-bar--expanded .rd-search-container {
+  border-color: #1666ED;
+  box-shadow: 0 10px 25px -5px rgba(22, 102, 237, 0.15);
+}
+
+.rd-search-input {
+  border: none !important;
+  outline: none !important;
+  flex: 1;
+  font-size: 15px;
+  background: transparent;
+  color: #1e293b;
+}
+
+.rd-search-icon-main {
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+.rd-clear-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.rd-v-line-search {
+  width: 1px;
+  height: 18px;
+  background: #E2E8F0;
+}
+
+.rd-search-icon-clear {
+  color: #94A3B8;
+  transition: color 0.2s;
+}
+
+.rd-search-icon-clear:hover {
+  color: #ef4444;
+}
+
+/* --- TOOLBAR --- */
+.rd-content-container { padding: 0 40px 40px; }
+.rd-section-title { font-size: 24px; font-weight: 700; margin: 30px 0; }
+.rd-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.rd-tabs { display: flex; gap: 12px; }
+
+.rd-tab {
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 1px solid #CBD5E1;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  color: #475569;
+}
+.rd-tab.active { color: white; background: #1666ED; border-color: #1666ED; }
+
+.rd-actions { display: flex; align-items: center; gap: 16px; }
+
+/* SELECT PILL */
+.rd-select-pill {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 40px;
+    padding: 10px 22px;
+    height: 48px;
+}
+
+.rd-pill-main { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+
+.rd-check-circle {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.rd-check-circle.is-active {
+  background: #1666ED;
+  border-color: #1666ED;
+}
+
+.rd-pill-divider { display: flex; align-items: center; margin-left: 12px; height: 20px; }
+.rd-v-line { width: 1px; height: 100%; background: #E2E8F0; margin-right: 12px; }
+.rd-back-arrow { color: #94A3B8; }
+.rd-select-text { font-weight: 500; color: #0F172A; font-size: 15px; }
+
+/* BUTTONS */
+.rd-btn-restore.visible {
+  background: #1666ED;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.rd-btn-empty {
+  background: #fff1f2;
+  color: #F24E1E;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid #fecaca;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* GRID & CARDS */
+.rd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.rd-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.rd-card-media { position: relative; height: 180px; background: #f8fafc; cursor: pointer; }
+.rd-card-media img { width: 100%; height: 100%; object-fit: cover; }
+
+.rd-card-overlay-check {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.rd-card-overlay-check.active {
+  background: #1666ED;
+  border-color: #1666ED;
+}
+
+.rd-card-info { padding: 15px; display: flex; gap: 12px; align-items: flex-start; }
+.rd-icon-container {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+.rd-icon-poster { background: #DCFCE7; color: #54B275; }
+.rd-icon-business-card { background: #E0F2FE; color: #0EA5E9; }
+.rd-icon-presentation { background: #EDE9FE; color: #8B5CF6; }
+
+.rd-text h3 { font-size: 15px; margin: 0; font-weight: 600; }
+.rd-text p { font-size: 13px; color: #64748b; margin: 2px 0; }
+.rd-text span { font-size: 11px; color: #94a3b8; }
+
+/* MODALS */
+.rd-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center; z-index: 3000;
+}
+
+.rd-modal-box {
+  background: white; padding: 40px; border-radius: 32px;
+  text-align: center; width: 400px;
+}
+
+.rd-modal-box h2{
+  color: rgba(17, 17, 17, 1);
+  font-weight: 600;
+}
+
+.rd-modal-icon { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; }
+.rd-modal-icon.blue { background: #E0F2FE; }
+.rd-modal-icon.red { background: #FFF1F2; }
+
+.rd-modal-btns { display: flex; gap: 12px; margin-top: 32px; }
+.rd-modal-btns button { flex: 1; padding: 14px; border-radius: 50px; border: none; font-weight: 700; cursor: pointer; }
+.rd-cancel { background: #f1f5f9; color: #475569; }
+.rd-confirm.bg-blue { background: #1666ED; color: white; }
+.rd-confirm.bg-red { background: #F24E1E; color: white; }
+
+/* ==========================================
+   HOVER STATES
+========================================== */
+
+.rd-tab,
+.rd-pill-main,
+.rd-btn-empty,
+.rd-btn-restore {
+  transition: all 0.2s ease;
+}
+
+.rd-tab:hover {
+  background: #f8fafc;
+  border-color: #1666ED;
+  color: #1666ED;
+}
+
+.rd-tab.active:hover {
+  background: #1458cc;
+  border-color: #1458cc;
+  color: #ffffff;
+}
+
+.rd-select-pill:hover {
+  border-color: #1666ED;
+  box-shadow: 0 0 0 3px rgba(22, 102, 237, 0.08);
+}
+
+.rd-btn-empty:hover {
+  background: #ffe4e6;
+  border-color: #fda4af;
+}
+
+.rd-btn-restore:hover {
+  background: #1458cc;
+}
+
+.rd-check-circle:hover {
+  border-color: #1666ED;
+}
+
+/* ================= DARK MODE ================= */
+.dark {
+  background: #020617;
+  color: #E2E8F0;
+}
+
+.dark .rd-hero-frame {
+  /* background: radial-gradient(circle at top, #0B1220, #020617); */
+  /* background-image: none; */
+     background: url(/src/assets/dark_pattern.png);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.dark .rd-dashboard-title {
+  color: #E2E8F0;
+}
+
+/* Updated Dark Mode Search Bar */
+.dark .rd-search-container {
+  background: #1E293B;
+  border-color: #334155;
+  box-shadow: none;
+}
+
+.dark .rd-search-input {
+  color: #FFFFFF !important;
+}
+
+.dark .rd-search-input::placeholder {
+  color: #94A3B8;
+}
+
+.dark .rd-search-icon-main,
+.dark .rd-search-icon-clear {
+  color: #94A3B8;
+}
+
+.dark .rd-v-line-search {
+  background: #334155;
+}
+
+.dark .rd-tab {
+  background: #020617;
+  border: 1px solid #1E293B;
+  color: #CBD5F5;
+}
+
+.dark .rd-tab.active {
+  background: linear-gradient(180deg, #3B82F6 0%, #2563EB 100%);
+  color: #FFFFFF;
+  border: none;
+}
+
+.dark .rd-select-pill {
+  background: #1E293B;
+  border: 1px solid #334155;
+}
+
+.dark .rd-select-text {
+  color: #E2E8F0;
+}
+
+.dark .rd-card {
+  background: #0F172A;
+  border: 1px solid #1E293B;
+}
+
+.dark .rd-card-media {
+  background: #020617;
+}
+
+.dark .rd-modal-box {
+  background: #020617;
+  border: 1px solid #1E293B;
+  color: #FFF;
+}
+
+.dark .rd-modal-box h2{
+  color: #FFFFFF ;
+  font-weight: 600;
+}
+
+.dark .rd-cancel {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #CBD5F5;
+}
+
+
+.dark .rd-text h3 { font-size: 15px; margin: 0; font-weight: 600; color: rgba(226, 232, 240, 1); }
+.dark .rd-text p { font-size: 13px; color: rgba(148, 163, 184, 1); margin: 2px 0; }
+.dark .rd-text span { font-size: 11px; color: rgba(148, 163, 184, 1); }
+
+/* ==========================================
+   DARK MODE HOVER STATES
+========================================== */
+
+.dark .rd-tab:hover {
+  background: #1E293B;
+  border-color: #3B82F6;
+  color: #FFFFFF;
+}
+
+.dark .rd-tab.active:hover {
+  background: #2563EB;
+}
+
+.dark .rd-select-pill:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.dark .rd-btn-empty:hover {
+  background: rgba(242, 78, 30, 0.15);
+}
+
+.dark .rd-btn-restore:hover {
+  background: #2563EB;
+}
+
+.dark .rd-check-circle:hover {
+  border-color: #3B82F6;
+}
+
+/* ==========================================
+   ACCESSIBILITY FOCUS STATES
+========================================== */
+
+.rd-tab:focus-visible,
+.rd-btn-empty:focus-visible,
+.rd-btn-restore:focus-visible {
+  outline: 2px solid #1666ED;
+  outline-offset: 3px;
+}
+
+.dark .rd-tab:focus-visible,
+.dark .rd-pill-main:focus-visible,
+.dark .rd-btn-empty:focus-visible,
+.dark .rd-btn-restore:focus-visible {
+  outline: 2px solid #60A5FA;
+}
+
+.rd-pill-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
+.rd-select-pill:focus-within {
+  border-color: #1666ED;
+  box-shadow: 0 0 0 3px rgba(22, 102, 237, 0.15);
+}
+
+.dark .rd-select-pill:focus-within {
+  border-color: #60A5FA;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+.rd-pill-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}

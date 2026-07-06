@@ -1,0 +1,126 @@
+@reference "tailwindcss";
+
+/* =====================
+   DASHBOARD SIDEBAR
+   ===================== */
+
+/* CSS VARIABLES */
+:root {
+  /* Brand Colors */
+  --brand-primary: #1F6FEB;
+
+  /* Shadows */
+  --shadow-sm: 0px 2px 4px 0px #0047791F;
+  --shadow-glow: 0px -1px 16px 0px #00304D14;
+
+  /* Inset Effects */
+  --shadow-inset-light: 0.5px 0.5px 0.5px 0px #26C6DA66 inset;
+  --shadow-inset-strong: -0.5px -0.25px 0.5px 0px #26C6DA99 inset;
+  --Brand-Secondary-hover: #1FB3C5;
+}
+
+:root {
+  --gradient-brand: linear-gradient(90deg,
+      #41C6FF,
+      #1F6FEB,
+      #26C6DA);
+}
+
+/* SIDEBAR CONTAINER */
+
+.sidebar {
+  @apply w-[95px] bg-white flex flex-col relative z-[99] shrink-0 justify-between items-center;
+  height: calc(100vh - 112px);
+  position: fixed;
+  top: 112px;
+  left: 0;
+  overflow: hidden;
+}
+
+/* LOGO BOX */
+.logo-box {
+  @apply w-[42px] h-[42px] flex items-center justify-center bg-gradient-to-br from-indigo-600 to-indigo-500 text-white rounded-xl font-semibold text-[18px];
+}
+
+/* MENU CONTAINER */
+.sidebar-menu {
+  @apply flex flex-col gap-[40px] mt-[95px];
+}
+
+/* MENU ITEM */
+.menu-item {
+  @apply flex flex-col items-center text-[12px] text-gray-500 cursor-pointer gap-[6px] transition-all duration-300;
+}
+
+.menu-item span {
+  @apply transition-all duration-300;
+}
+
+/* ACTIVE MENU ITEM */
+.menu-item.active span {
+  @apply translate-y-[6px] bg-[#164DB3] bg-clip-text text-transparent;
+  font-weight: 600;
+}
+
+.menu-item svg,
+.menu-item i {
+  @apply w-[32px] h-[32px] p-[8px] rounded-[10px] flex items-center justify-center transition-all duration-300;
+}
+
+.menu-item.active svg,
+.menu-item.active i {
+  @apply scale-105 text-[#EAF6FD];
+  background: var(--brand-primary);
+  box-shadow:
+    var(--shadow-sm),
+    var(--shadow-glow),
+    var(--shadow-inset-light),
+    var(--shadow-inset-strong);
+}
+
+/* HOVER STATE */
+.menu-item:not(.active):hover {
+  @apply text-blue-600;
+}
+
+.menu-item:not(.active):hover svg,
+.menu-item:not(.active):hover i {
+  @apply bg-[#b1b3d0] text-white shadow-lg;
+}
+
+/* SIDEBAR BOTTOM (TRASH) */
+.sidebar-bottom {
+  @apply text-[20px] text-gray-400 cursor-pointer mb-[32px] inline-block;
+}
+
+
+
+.sidebar-bottom {
+  @apply text-[20px] text-gray-400 cursor-pointer mb-[32px] inline-block;
+}
+
+.sidebar-bottom svg {
+  @apply w-[32px] h-[32px] p-[8px] rounded-[10px]
+         transition-all duration-300;
+}
+
+.sidebar-bottom:hover svg {
+  @apply bg-[#b1b3d0] text-white shadow-lg;
+}
+
+.sidebar-bottom.active svg {
+  @apply scale-105 text-[#EAF6FD];
+
+  background: #ef4444;
+
+  box-shadow:
+    var(--shadow-sm),
+    var(--shadow-glow),
+    var(--shadow-inset-light),
+    var(--shadow-inset-strong);
+}
+
+.sidebar-bottom:focus-visible svg {
+  outline: 2px solid #ef4444;
+  outline-offset: 3px;
+}

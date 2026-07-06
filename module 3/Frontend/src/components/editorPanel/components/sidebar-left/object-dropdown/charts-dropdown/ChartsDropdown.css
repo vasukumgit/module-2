@@ -1,0 +1,194 @@
+/* WRAPPER */
+
+.charts-dropdown-wrapper {
+  position: absolute;
+  left: 100px;
+  /* top: 152px; */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+
+/* MAIN CONTAINER */
+
+
+.charts-main-container {
+  width: 360px;
+  height: calc((100vh / 1024px) * 720px);
+  /* height: 90vh; */
+  /* max-height: 800px; */
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, sans-serif;
+  box-shadow: 0px 0px 24px 0px #0000001f;
+
+  box-shadow: 0px 0px 4px 0px #0000000a;
+}
+/* HEADER */
+
+.charts-fixed-header-section {
+  padding: 18px 16px 0;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.charts-ui-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.charts-title-grp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.charts-title-grp h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color:#020617;
+}
+
+.charts-close-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #F8FAFC;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.charts-close-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+/* SEARCH */
+
+.charts-search-area {
+  margin-top: 18px;
+}
+
+.charts-input-wrapper {
+  width: 328px;
+  height: 48px;
+  background: #F8FAFC;
+  border: 0.5px solid #E2E8F0;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.charts-input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  color: #475569;
+}
+
+.charts-input-wrapper input::placeholder {
+  color: #98a2b3;
+}
+
+.charts-search-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* BODY */
+
+.charts-scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 16px 20px;
+}
+
+.charts-scroll-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.charts-scroll-body::-webkit-scrollbar-thumb {
+  background:#CBD5E1;
+  border-radius: 24px;
+}
+
+
+
+/* SECTION */
+
+.charts-section {
+  margin-bottom: 38px;
+}
+
+.charts-section h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color:#020617;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+
+.charts-grid {
+  display: grid;
+}
+
+.three-grid {
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+}
+
+.charts-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* IMAGE */
+
+.table-img,
+.chart-img {
+  width: 90px;
+  object-fit: contain;
+}
+
+/* DARK THEME */
+
+.dark .charts-main-container {
+  background: #0F172A;
+}
+
+.dark .charts-fixed-header-section {
+  background: #0F172A;
+}
+
+.dark .charts-title-grp h2,
+.dark .charts-section h4 {
+  color: #FFFFFF;
+}
+
+.dark .charts-input-wrapper {
+  background: #1E293B;
+  border: 0.5px solid #334155;
+}
+
+.dark .charts-close-btn {
+  background:#1E293B;
+}
+
+.dark .charts-scroll-body::-webkit-scrollbar {
+  /* background:#94A3B8; */
+  display: none;
+}

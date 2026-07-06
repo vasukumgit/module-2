@@ -1,0 +1,17 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="300"
+  height="300"
+  viewBox="0 0 300 300"
+  fill="none"
+>
+  
+          <path
+            d="M0 150 Q75 100 150 150 T300 150"
+            stroke="#EF4444"
+            fill="none"
+            stroke-width="10"
+          />
+        
+</svg>

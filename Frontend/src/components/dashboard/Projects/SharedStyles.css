@@ -1,0 +1,977 @@
+/* =========================================
+   SHARED STYLES - Used by both Projects and Folders pages
+   ========================================= */
+
+:root {
+  --st-primary-blue: #0ea5e9;
+  --st-white: #ffffff;
+  --st-text-main: #1e293b;
+  --st-text-muted: #64748b;
+  --st-border-light: #e2e8f0;
+  --st-bg-gradient: linear-gradient(135.32deg, #F0F1F5 24.86%, #F3F3F5 38.23%, #F5F5F5 63.18%, #F3F4F5 88.44%, #F0F1F5 100%);
+}
+
+.st-workspace-root, 
+.st-workspace-root * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.st-workspace-root {
+  color: var(--st-text-main);
+}
+
+.st-text{
+  font-family: TypeFace Heading;
+  font-weight: 600;
+  font-style: Semibold;
+  font-size: 28px;
+  leading-trim: NONE;
+  line-height: Line Height/line-height-2xl;
+  letter-spacing: 0%;
+}
+
+/* PAGE WRAPPER */
+.st-dashboard-wrapper {
+  padding: 40px 60px;
+  min-height: 100vh;
+}
+
+/* HEADER & SEARCH */
+.st-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.st-logo {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.st-logo span {
+  background: linear-gradient(90deg, #41C6FF 25%, #7059F4 58.65%, #B305DE 87.98%, #DE3E3E 99.52%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.st-search-bar {
+  max-width: 400px;
+  margin: auto;
+  transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.st-search-bar--expanded {
+  max-width: 650px;
+}
+
+.st-search-container {
+  background: white;
+  border: 1px solid var(--st-border-light);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.st-search-bar--expanded .st-search-container {
+  border-color: var(--st-primary-blue);
+  box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.1);
+}
+
+.st-search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  background: transparent;
+}
+
+.st-search-badge {
+  font-size: 12px;
+  color: var(--st-text-muted);
+  background: #f1f5f9;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.st-search-icon-main {
+  color: var(--st-text-muted);
+}
+
+.st-search-icon-clear {
+  color: var(--st-text-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.st-search-icon-clear:hover {
+  color: #ef4444;
+}
+
+/* NAVIGATION BARS */
+.st-nav-bar-simple,
+.st-nav-bar-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.st-nav-tabs-left, .st-nav-pills-left {
+  display: flex;
+  gap: 10px;
+}
+
+.st-nav-tab-item, .st-pill-item {
+  border: none;
+  background: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--st-text-muted);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.st-nav-tab-item.st-active, .st-pill-item.st-active {
+  background: #f0f9ff;
+  color: var(--st-primary-blue);
+}
+
+.st-nav-actions-right, .st-nav-tools-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* The Main "Create new" Button Container */
+.st-btn-create-new {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #2563eb; 
+  color: white;
+  border: none;
+  padding: 5px 24px 5px 6px; 
+  border-radius: 100px;      
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+/* The light blue circle around the Plus icon */
+.st-create-icon-wrapper {
+  background: #e0f2fe; 
+  color: #0ea5e9;      
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Hover effect */
+.st-btn-create-new:hover {
+  background: #1d4ed8;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+}
+
+.st-pill-item, .st-nav-tab-item {
+  border: 1px solid #cbd5e1 !important;
+  background: white !important;
+  border-radius: 100px !important;
+  color: #64748b !important;
+  padding: 8px 20px !important;
+}
+
+.st-pill-item.st-active {
+  background: #eff6ff !important;
+  border-color: #3b82f6 !important;
+  color: #2563eb !important;
+}
+
+/* --- DROPDOWNS (Last Viewed & All Projects) --- */
+.st-ui-select {
+  appearance: none;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 100px; /* Pill shape */
+  padding: 10px 40px 10px 20px;
+  font-size: 14px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.st-ui-select:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.st-select-chevron {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #64748b;
+}
+
+/* --- VIEW TOGGLE (Grid/List) --- */
+.st-view-toggle-pill {
+  display: flex;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 100px; 
+  padding: 4px;
+  gap: 2px;
+}
+
+.st-view-btn-left, .st-view-btn-right {
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+/* The left button rounded side */
+.st-view-btn-left {
+  border-radius: 100px 0 0 100px;
+}
+
+/* The right button rounded side */
+.st-view-btn-right {
+  border-radius: 0 100px 100px 0;
+}
+
+/* The light blue active background from your image */
+.st-view-btn-left.st-active, 
+.st-view-btn-right.st-active {
+  background: #e0f2fe; 
+  color: #0ea5e9;      
+  border-radius: 100px; 
+}
+
+/* --- OPTIONAL: Adjusting the Right Actions Alignment --- */
+.st-nav-tools-right {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+}
+
+/* MORE BUTTON */
+.st-more-options-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  color: var(--st-text-muted);
+}
+
+.st-more-options-btn:hover {
+  background: #f1f5f9;
+}
+
+/* GRID VIEW */
+.st-grid-layout .st-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.st-card-container {
+  /* background: white; */
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.st-card-container:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  transform: translateY(-2px);
+}
+
+.st-card-media {
+  height: 180px;
+}
+
+.st-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.st-card-star-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(0,0,0,0.25);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.st-grid-layout .st-card-details {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.st-card-info-row {
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  padding-right: 45px;
+}
+
+.st-type-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.st-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.st-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.st-meta-date, .st-meta-dim {
+  font-size: 12px;
+  color: var(--st-text-muted);
+}
+
+.st-grid-layout .st-more-options-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* LIST VIEW */
+.st-list-layout .st-project-grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--st-border-light);
+  overflow: hidden;
+}
+
+.st-list-header, 
+.st-list-row .st-card-details {
+  display: grid;
+  grid-template-columns: 2.5fr 1.3fr 1fr 1fr 48px;
+  align-items: center;
+}
+
+.st-list-header {
+  padding: 14px 20px 14px 150px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--st-text-muted);
+  background: #f8fafc;
+  border-bottom:1px solid var(--st-border-light);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.st-list-row {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  border-bottom: 1px solid var(--st-border-light);
+  padding: 0 15px;
+  backdrop-filter: blur(5px);
+}
+
+.st-list-row:last-child {
+  border-bottom: none;
+}
+
+.st-list-row .st-card-star-btn {
+  position: static;
+  background: transparent;
+  color: var(--st-text-muted);
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.st-list-row .st-card-media {
+  width: 80px;
+  height: 52px;
+  margin: 0 15px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.st-list-row .st-card-details {
+  flex: 1;
+}
+
+.st-list-icon-overlay {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: white;
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.st-content-area {
+  border-radius: 20px;
+}
+
+.st-title-row {
+  margin-bottom: 24px;
+}
+
+.st-projects-section {
+  margin-bottom: 50px;
+}
+
+.st-section-label {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== FIX TOGGLE ALIGNMENT (NO STARRED CASE) ===== */
+
+/* Make all right-side items same height */
+.st-nav-actions-right > * {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Fix toggle container */
+.st-view-toggle-group {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+/* Fix buttons inside toggle */
+.st-view-btn {
+  height: 32px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fix Create button alignment */
+.st-btn-create-new {
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* Fix dropdown height if present */
+.st-ui-select {
+  height: 40px;
+}
+
+.st-view-toggle-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.st-view-btn {
+  width: 34px;
+  height: 30px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.st-view-btn.st-active {
+  background: #e0f2fe;
+  color: #0ea5e9;
+}
+
+/* --- HERO SECTION --- */
+.pj-hero-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  background-image: url("../../../assets/light_pattern.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 30px;
+}
+
+/* FLOATING IMAGES */
+.pj-hero-img {
+  position: absolute;
+  object-fit: contain;
+  animation: pj-float 4s ease-in-out infinite;
+}
+
+@keyframes pj-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.pj-img-left {
+  width: 140px;
+  top: 40px;
+  left: 8%;
+}
+
+.pj-img-right-top {
+  width: 100px;
+  top: 40px;
+  right: 12%;
+  animation-delay: 1s;
+}
+
+.pj-img-right-bottom {
+  width: 120px;
+  bottom: 40px;
+  right: 8%;
+  animation-delay: 2s;
+}
+
+/* TITLE */
+.pj-dashboard-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+}
+
+.pj-dashboard-title span {
+  background: linear-gradient(90deg, #41C6FF 5.29%, #1F6FEB 69.71%, #26C6DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- SEARCH BAR --- */
+.pj-search-bar {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  transition: max-width 0.4s ease;
+}
+
+.pj-search-bar--expanded {
+  max-width: 620px;
+}
+
+.pj-search-container {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 12px;
+  height: 54px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.pj-search-bar--expanded .pj-search-container {
+  border-color: #1666ED;
+  box-shadow: 0 10px 25px -5px rgba(22, 102, 237, 0.15);
+}
+
+.pj-search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 15px;
+  background: transparent;
+  color: #1e293b;
+}
+
+.pj-search-icon-main {
+  color: #94A3B8;
+}
+
+.pj-clear-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.pj-v-line-search {
+  width: 1px;
+  height: 18px;
+  background: #E2E8F0;
+}
+
+.pj-search-icon-clear {
+  color: #94A3B8;
+}
+
+.pj-search-icon-clear:hover {
+  color: #ef4444;
+}
+
+/* Container adjustment for selection */
+.st-card-container {
+  position: relative; 
+  /* border: 2px solid transparent; */
+  transition: all 0.2s ease;
+}
+
+.st-card-container.st-card-selected {
+  border-color: #0ea5e9;
+  /* background-color: #f0f9ff; */
+}
+
+/* The Round Select Circle */
+.st-round-select {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%; 
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* Appearance when selected */
+.st-round-select.is-selected {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+}
+
+/* Hide circle in grid view until hover (Optional, common UI pattern) */
+.st-card-container:not(.st-card-selected) .st-round-select {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.st-card-container:hover .st-round-select {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Always show if selected */
+.st-card-container.st-card-selected .st-round-select {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* List view adjustment for circle */
+.st-list-row .st-round-select {
+  position: static;
+  margin-right: 10px;
+  flex-shrink: 0;
+  opacity: 1; 
+  transform: scale(1);
+  border-color: #cbd5e1;
+}
+
+/* =========================================
+   EXACT DARK THEME COLORS (From Reference)
+   ========================================= */
+
+/* Main Background - Deep Navy */
+.dark .st-workspace-root,
+.dark .st-dashboard-wrapper {
+  background-color: #000717; 
+  color: #ffffff;
+}
+
+/* Hero Section Gradient Background */
+.dark .pj-hero-frame {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-image: url("../../../assets/dark_pattern.png");
+}
+
+/* Search Bar - Glass Effect */
+.dark .pj-search-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dark .pj-search-input {
+  color: #ffffff;
+}
+
+.dark .pj-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Navigation Pills & Buttons */
+.dark .st-nav-tab-item {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.dark .st-nav-tab-item.st-active {
+  background: #ffffff;
+  color: #000717; 
+}
+
+/* Dropdown styling */
+.dark .st-dropdown-wrapper {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
+
+.dark .st-ui-select {
+  background: transparent;
+  color: #ffffff;
+}
+
+/* View Toggle Container */
+.dark .st-view-toggle-group {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.dark .st-view-btn.st-active {
+  background: #bfdbfe; 
+  color: #1e293b;
+}
+
+/* Cards - Dark Slate */
+.dark .st-card-container {
+  /* background: #1e293b; */
+  border-radius: 12px;
+  overflow: hidden;
+  /* border: 1px solid rgba(255, 255, 255, 0.05); */
+}
+
+
+
+.dark .st-card-details {
+  /* background: #1e293b;  */
+}
+
+.dark .st-card-title {
+  color: #ffffff;
+}
+
+.dark .st-card-meta {
+  color: #94a3b8;
+}
+
+/* Starred Heading Dropdown */
+.dark .st-section-label {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =========================================
+   List Header Dark Mode (Always Bright)
+   ========================================= */
+
+.dark .st-list-header {
+  /* Using a brighter off-white so it's readable without hover */
+  color: #e2e8f0; 
+  
+  /* Slightly more visible border to define the columns */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  
+  background: transparent;
+  padding: 16px 20px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  transition: all 0.2s ease;
+}
+
+.dark .st-list-header:hover {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+   Dropdown & Select Visibility Fix
+   ========================================= */
+
+/* The container holding the select and the chevron */
+.dark .st-dropdown-wrapper {
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  transition: border-color 0.2s ease;
+}
+
+.dark .st-dropdown-wrapper:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* The actual select element */
+.dark .st-ui-select {
+  background: transparent !important; 
+  color: #ffffff !important;
+  border: none !important;
+  padding: 8px 32px 8px 12px; 
+  cursor: pointer;
+  appearance: none; 
+  -webkit-appearance: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Fix for dropdown options (The popup menu) */
+.dark .st-ui-select option {
+  background-color: #1e293b; 
+  color: #ffffff;
+}
+
+/* The Lucide Arrow Fix */
+.dark .st-select-chevron {
+  color: #ffffff !important;
+  position: absolute;
+  right: 12px;
+  pointer-events: none; 
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* --- 1. DARK MODE HEADING & STUDIO TEXT --- */
+.dark .pj-dashboard-title,
+.dark .st-heading-primary,
+.dark .st-text {
+  color: #ffffff !important;
+}
+
+/* --- FIXED DROPDOWNS PLACEMENT --- */
+
+.st-dropdown-wrapper {
+  position: relative; 
+  display: flex;
+  align-items: center;
+}
+
+.st-ui-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 100px;
+  padding: 10px 40px 10px 16px; 
+  font-size: 14px;
+  color: #475569;
+  cursor: pointer;
+  width: 100%;
+  min-width: 150px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.st-select-chevron {
+  position: absolute;
+  right: 15px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  pointer-events: none; 
+  color: #64748b;
+  z-index: 10;
+}
+
+.dark .st-dropdown-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+}
+
+.dark .st-ui-select {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.dark .st-select-chevron {
+  color: #ffffff !important;
+}
+
+/* Hover effect for both modes */
+.st-dropdown-wrapper:hover .st-ui-select {
+  border-color: #cbd5e1;
+}
+
+.dark .st-dropdown-wrapper:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.st-btn-create-new {
+  margin-left: 8px; 
+}

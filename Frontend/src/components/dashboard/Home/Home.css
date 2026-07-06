@@ -1,0 +1,584 @@
+@import "tailwindcss";
+
+/* =====================
+    HOME COMPONENT
+ ===================== */
+.dashboard-hero-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56px;
+  padding-bottom: 56px;
+
+  background-image: url("../../../assets/light_pattern.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 30px;
+  
+}
+
+/* DARK MODE IMAGE */
+.dark .dashboard-hero-frame {
+  background-image: url("../../../assets/dark_pattern.png");
+}
+
+
+/* Icons */
+
+.dashboard-hero-img {
+  position: absolute;   /* ✅ KEY FIX */
+  object-fit: contain;
+
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+}
+
+/* Left image */
+.img-left {
+  width: 258px;
+  height: 172px;
+
+  top: 24px;
+  left: 34px;
+
+}
+
+/* Right top */
+.img-right-top {
+    width: 95px;
+  height: 101px;
+
+  top: 53px;
+  left: 1054px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Right bottom */
+.img-right-bottom {
+
+  width: 178px;
+  height: 119px;
+
+  bottom: 20px;   /* ✅ better than top */
+  right: 104px;    /* ✅ instead of left */
+
+}
+
+
+
+.suggest-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #f3f4f6;
+  padding: 10px 14px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggest-card:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.suggest-card img {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.suggest-card span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* QUICK ACTIONS */
+
+.quick-actions {
+  margin-bottom: 50px;
+  display: flex;
+  gap: 15px;
+}
+
+.quick-actions h4 {
+  flex-basis: 100%;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+/* Outer container */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+}
+
+/* Button */
+.action-btn {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 4px 14px 4px 4px;   /* 🔥 key fix */
+  background: #ffffff;
+  border: 1px solid #CBD5E1;
+  border-radius: 999px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.action-btn:hover {
+  background: #f9fafb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.left svg {
+  display: block;
+}
+
+/* Left icon container */
+.left {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+}
+
+
+
+
+/* Different background colors */
+.left.icon-business {
+  border-radius: 100px;
+  background: #DCFCE7;
+  color: #54B275;
+}
+
+.left.icon-card {
+  border-radius: 100px;
+  background: #E0F2FE;
+  color: #0EA5E9;
+}
+
+.left.icon-presentation {
+  border-radius: 100px;
+  background: #EDE9FE;
+  color: #8B5CF6;
+}
+
+.left.icon-custom {
+  border-radius: 100px;
+  background: #E6FAFD;
+  color: #1FB3C5;
+}
+
+.Create-New{
+  background: #1F6FEB;
+  color: #F8FAFC;
+  font-weight: 500;
+  box-shadow: 0px 0px 12px 0px #0C3D8859;
+
+box-shadow: 0px 1px 4px 0px #0C3D880F;
+
+box-shadow: 1px 1px 1px 0px #26C6DA66 inset;
+
+box-shadow: -1px -1px 1px 0px #26C6DA66 inset;
+
+}
+
+.Create-New:hover{
+  background: #1F6FEB;
+}
+
+
+
+.clicked{
+  border: 1px solid #B1B1B1;
+}
+
+/* =====================
+    RECENTS
+ ===================== */
+.recents{
+  margin: 24px 24px 32px 24px;
+}
+
+.recents h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* .recent-card {
+  background: white;
+  border-radius: 28px;
+  padding: 80px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+}
+
+.recent-card p {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.recent-card span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.recent-create {
+  margin-top: 20px;
+  padding: 10px 24px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+} */
+
+.recent-card {
+  /* background: #ffffff; */
+  border-radius: 28px;
+  padding: 60px 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* box-shadow: 0 20px 60px rgba(0,0,0,0.06); */
+}
+
+.recent-card p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.recent-card span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.recent-create {
+  margin-top: 20px;
+  padding: 10px 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 999px;
+  border: 1px solid #CBD5E1;
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.create-new-btn {
+  background: #1F6FEB;
+  color: #fff;
+  border: none;
+  padding: 0 16px;
+}
+
+.create-new-btn:hover {
+  background: #1a5fd1;
+}
+
+.recent-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+/* =================================
+
+Dark Theme
+
+====================================*/
+
+.dark .recent-card {
+  background: #1E293B;
+  color: #fff;
+}
+
+.dark .recent-card span {
+  color: #cbd5f5;
+}
+
+.dark .recent-create {
+  background: #0F172A;
+  border-color: #334155;
+  color: #fff;
+}
+
+.dark .recent-actions h2{
+  color: #fff;
+}
+
+.dark .Poster,
+.dark .Business,
+.dark .Presentation,
+.dark .recent-card ,
+.dark .recent-create{
+  background: transparent;
+  color: #fff;
+}
+
+/* .dark .search-box,
+.dark .search-box input{
+  background: #475569;
+}
+
+.dark .search-box input::placeholder,
+.dark .search-box .search-icon{
+  color: #E2E8F0;
+} */
+
+.dark .search-box input::placeholder,
+.dark .search-box .search-icon{
+  color: #E2E8F0;
+}
+
+
+
+
+/* Grid */
+.suggested-grid {
+  @apply grid grid-cols-4 gap-[8px] top-[188px];
+}
+ 
+/* Card (VERTICAL like image) */
+.suggest-card {
+  @apply flex flex-col items-center
+         bg-[#F8FAFC] p-1 rounded-2xl cursor-pointer transition-all duration-200 ease-in-out
+         border-solid border-[#CBD5E1] border-[1px] w-[120px] h-[148px] p-1;
+}
+ 
+/* Image (top) */
+.suggest-card img {
+  @apply w-[112px] h-[112px] object-cover rounded-[12px];
+}
+ 
+/* Text (bottom) */
+.suggest-card span {
+  @apply text-sm font-medium text-[#0F172A] text-center;
+}
+.recent {
+  @apply mt-6;
+}
+ 
+.recent-header {
+  @apply flex  items-center ;
+}
+ 
+.recent-header h4 {
+  @apply font-semibold text-[#1E293B] font-[600];
+}
+ 
+.recent-header button {
+  @apply w-[53px] h-[24px] text-sm text-[#1E293B] bg-[#F8FAFC] ml-[372px] mt-[0] rounded-[100px] border-solid border-[#CBD5E1] border-[1px];
+}
+ 
+.recent-list {
+  @apply   text-[#0F172A] font-[400] mt-[20px] ;
+}
+/* .recent-list p{
+  @apply inline ;
+} */
+/* .recent-list svg{
+  @apply inline;
+} */
+ 
+
+/* Grid */
+ 
+/* Card (VERTICAL like image) */
+.dark .suggest-card {
+  @apply bg-[#0F172A]  border-[#334155] ;
+}
+ 
+ 
+/* Text (bottom) */
+.dark .suggest-card span {
+  @apply  text-[#FFFFFF];
+}
+ 
+.dark .recent-header h4 {
+  @apply  text-[#FFFFFF];
+}
+ 
+.dark .recent-header button {
+  @apply  text-[#FFFFFF] bg-[#0F172A] border-[#334155] ;
+}
+ 
+.dark .recent-list p {
+  @apply  text-[#F8FAFC] ;
+}
+
+
+
+
+
+
+
+
+ 
+/*===================
+    DARK THEME
+====================*/
+
+.search-box {
+  @apply bg-white border border-[#CBD5E1] rounded-[32px] flex items-center px-4 h-[56px];
+}
+ 
+/* Search Wrapper */
+.search-wrapper {
+  @apply relative w-[600px] mx-auto mb-[40px] transition-all duration-300 ease-in-out font-sans
+         overflow-visible;
+}
+ 
+/* Active Wrapper */
+.search-wrapper.active {
+  @apply shadow-[0_20px_60px_rgba(0,0,0,0.08)] z-[1000] font-sans  border-none rounded-[32px];
+}
+
+ 
+ 
+/* Search Dropdown */
+.dark .search-dropdown {
+  @apply absolute top-full left-0 w-full
+         bg-[#1E293B] rounded-b-[20px] pl-[24px] z-[999] shadow-[0_25px_40px_rgba(0,0,0,0.08)] text-[#FFF];
+}
+/* Search Link Tag */
+.dark .search-link span {
+  @apply bg-[#0F172A] text-[#FFFFFF] border-[#334155];
+}
+.dark .search-link{
+  @apply text-[#FFFFFF];
+}
+.dark .suggested h4 {
+  @apply  text-[#FFFFFF];
+}
+
+
+
+/* =====================
+       SEARCH
+ ===================== */
+
+.search-box {
+ /* old width: 100%; */
+  /* old-height: 56px; */
+  width:586px;
+  height: 72px;         
+  /* border: #D4D4D8 solid 1px; */
+  border-bottom:none;
+  background: #fff;
+  padding: 14px 20px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* transition: all var(--transition); */
+
+  /* ✅ Add both shadows like this */
+  box-shadow: 
+    0px 4px 24px 0px #7070701F,
+    0px 3px 3px 0px #1A1A1A0F;
+}
+
+:root {
+  --transition: 0.3s ease;
+}
+
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+/*=================
+UPDATED SEARCHBAR
+==================*/
+
+/* Search Box */
+.search-box .active {
+  /* width: 100%; */
+  /* old-height: 56px; */
+  width: 600px;
+}
+/* Search Wrapper */
+.search-wrapper {
+  @apply relative w-[600px] mx-auto mb-[40px] transition-all duration-300 ease-in-out font-sans
+         overflow-visible;
+}
+
+/* Active Wrapper */
+.search-wrapper.active {
+  @apply shadow-[0_20px_60px_rgba(0,0,0,0.08)] z-[1000] font-sans  border-none rounded-[32px];
+}
+
+
+/* Active Search Box (top rounded only) */
+.search-wrapper.active .search-box {
+  @apply rounded-t-[32px]! rounded-b-none!  border-none  w-[600px];
+  /* @apply rounded-b-none border-b-0; */
+}
+
+/* Search Dropdown */
+.search-dropdown {
+  @apply absolute top-full left-0 w-full h-[532px] 
+         bg-[#FFFFFF] rounded-b-[20px] pl-[24px] z-[999] shadow-[0_25px_40px_rgba(0,0,0,0.08)];
+}
+
+/* Search Links Container */
+.search-links {
+  @apply mb-[15px] w-[582px] top-[16px];
+}
+
+/* Individual Link */
+.search-link {
+  @apply py-[10px] text-[#0F172A] cursor-pointer;
+}
+
+/* Search Link Tag */
+.search-link span {
+  @apply inline-block 
+         w-[72px] h-[28px] bg-[#F8FAFC] px-[10px] py-[4px] rounded-full text-[#475569] text-[12px]
+          mr-[10px] text-center border-solid border-[#CBD5E1] border-[1px];
+}
+.suggested h4 {
+  @apply font-semibold text-[#1E293B] font-[600] pb-[10px];
+}
+
+
+.search-box input::placeholder
+.search-box .search-icon{
+  color: rgba(100, 116, 139, 1);
+}

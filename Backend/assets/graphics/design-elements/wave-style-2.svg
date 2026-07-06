@@ -1,0 +1,17 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="300"
+  height="300"
+  viewBox="0 0 300 300"
+  fill="none"
+>
+  
+          <polyline
+            points="0,150 50,100 100,150 150,100 200,150"
+            stroke="#8B5CF6"
+            fill="none"
+            stroke-width="10"
+          />
+        
+</svg>

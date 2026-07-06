@@ -1,0 +1,472 @@
+.editor-invite-box {
+  position: fixed;
+  width: 360px;
+  height: 500px;
+  top: 120px;
+  right: 130px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border-radius: 30px;
+  border-bottom: 0.5px solid var(--Neutral-300, #CBD5E1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* .title-input {
+  width: 100%;
+} */
+.editor-scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.share-collaborate-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.editor-email-invite{
+  width: 248px;
+height: 40px;
+display: flex;
+justify-content: space-between;
+padding-top: 8px;
+padding-right: 8px;
+padding-bottom: 8px;
+padding-left: 16px;
+border-radius: 100px;
+border-width: 0.5px;
+background: var(--Neutral-0, #FFFFFF);
+border: 0.5px solid var(--Neutral-300, #CBD5E1);
+}
+.editor-email-invite input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  background: transparent;
+}
+.editor-container-invite-button{
+  display: flex;
+  gap: 8px;
+}
+.editor-invite-button{
+width: 72px;
+height: 40px;
+border-radius: 100px;
+gap: 4px;
+padding: 8px;
+background: var(--Neutral-200, #E2E8F0);
+color: var(--Neutral-400, #94A3B8);
+cursor: not-allowed;
+}
+.editor-invite-button.active {
+ background: var(--Brand-Primary, #1F6FEB);
+box-shadow: 0px 0px 16px 0px #1F6FEB29;
+box-shadow: 0px 2px 6px 0px #1F6FEB3D;
+color: white; 
+  cursor: pointer;
+}
+.editor-admin-button{
+  width: 63px;
+height: 24px;
+padding-top: 2px;
+padding-right: 2px;
+display: flex;
+padding-bottom: 4px;
+padding-left: 4px;
+gap: 4px;
+border-radius: 100px;
+border-width: 0.5px;
+background: var(--Neutral-50, #F8FAFC);
+border: 0.5px solid var(--Neutral-300, #CBD5E1);
+font-size: 12px;
+}
+.editor-role-dropdown {
+  position: relative;
+}
+.editor-dropdown-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 120px;
+  background: white;
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;   /* ✅ required */
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  padding: 6px 0;
+  z-index: 1000;
+}
+.editor-dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.editor-dropdown-menu li:hover {
+  background: #F1F5F9;
+}
+.invite-svg-downarrow{
+  padding-right: 4px;
+  padding-left: 0px;
+  padding-top: 4px;
+}
+.editor-footer-button{
+  display: flex;
+  gap: 67px;
+  padding-top: 16px;
+}
+.edit-copy-invite-link{
+  display: flex;
+  width: 133px;
+height: 32px;
+border-radius: 100px;
+border-width: 0.5px;
+top: 10px;
+left: 16px;
+padding-top: 8px;
+padding-right: 10px;
+padding-bottom: 8px;
+padding-left: 16px;
+gap: 8px;
+background: #1F6FEB1A;
+border: 0.5px solid #1F6FEB52;
+color: var(--Brand-Primary-active, #164DB3);
+font-size: x-small;
+font-weight: 400;
+}
+.invite-svg-invite{
+  width: 16px;
+height: 16px;
+right: 8px;
+}
+.edit-invited-only{
+  display: flex;
+  width: 128px;
+height: 32px;
+border-radius: 100px;
+border-width: 0.5px;
+padding-top: 8px;
+padding-right: 12px;
+padding-bottom: 8px;
+padding-left: 12px;
+gap: 6px;
+background: var(--Neutral-0, #FFFFFF);
+border: 0.5px solid var(--Neutral-300, #CBD5E1);
+font-size: x-small;
+font-weight: 500;
+}
+.editor-team-section {
+  margin-top: 16px;
+}
+.editor-team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.editor-member-team-count {
+  background: #1F6FEB;
+  color: white;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 12px;
+}
+.editor-role-team-member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.editor-pending-member-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.editor-pending-member-left img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.editor-pending-member-left h4 {
+  font-size: 14px;
+  margin: 0;
+}
+.editor-pending-member-left p {
+  font-size: 12px;
+  color: #64748B;
+  margin: 0;
+}
+.editor-role-member-role {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.editor-invite-profile-panel {
+  position: fixed;
+  top: 110px;
+  right: 120px;
+  width: 280px;
+  height: 500px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2000;
+}
+.editor-team-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.editor-team-profile-header h4 {
+  margin: 0;
+  font-size: 16px;
+}
+.editor-team-profile-header p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748B;
+}
+.editor-multipanel-profile-search input {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #CBD5E1;
+  outline: none;
+}
+.editor-multipanel-profile-search {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.editor-multipanel-profile-list {
+  margin-top: 12px;
+  overflow-y: auto;
+}
+.editor-multipanel-section-title {
+  font-size: 12px;
+  color: #64748B;
+  margin: 10px 0 6px;
+}
+
+.profile-user {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 0;
+}
+.profile-user img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.profile-user h5 {
+  margin: 0;
+  font-size: 14px;
+}
+.profile-user p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748B;
+}
+.profile-user.muted {
+  opacity: 0.5;
+}
+/* .profile-user.pending {
+  opacity: 0.7;
+} */
+
+.editor-multipanel-section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 6px;
+}
+.editor-multipanel-section-header p {
+  font-size: 12px;
+  color: #64748B;
+  margin: 0;
+}
+.editor-team-profile-online-count {
+  background: #1F6FEB;
+  color: white;
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.editor-team-panel-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--Neutral-400, #94A3B8);
+border: 0.5px solid var(--Neutral-200, #E2E8F0);
+background: var(--Neutral-100, #F1F5F9);
+}
+
+
+.editor-pending-invite-section {
+  margin-top: 20px;
+}
+
+.editor-pending-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 10px;
+}
+.pending-card {
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+.editor-popup-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.editor-confirm-popup{
+  width: 380px;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+}
+
+.editor-confirm-popup h3{
+  margin: 0 0 12px;
+}
+
+.editor-confirm-popup p{
+  font-size: 14px;
+  line-height: 22px;
+  color: #4B5563;
+}
+
+.editor-checkbox-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.editor-popup-buttons{
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.editor-popup-cancel{
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid #D1D5DB;
+  background: white;
+  cursor: pointer;
+}
+
+.editor-popup-confirm{
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #2563EB;
+  color: white;
+  cursor: pointer;
+}
+
+/* ✅ MODULE 3 ADDED: Header avatar count beside Invite */
+.editor-header-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #E8EEF9;
+  color: #1D4ED8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #ffffff;
+}
+
+/* ✅ MODULE 3 ADDED: Online / Away status in team popup */
+.editor-team-status-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editor-presence-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.editor-presence-dot.online {
+  background: #22C55E;
+}
+
+.editor-presence-dot.away {
+  background: #F59E0B;
+}
+
+.editor-team-role-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* ✅ MODULE 3 ADDED: Shared project badge */
+.st-shared-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #1F6FEB;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  z-index: 5;
+}
+.editor-access-dropdown{
+  position: absolute;
+  bottom: 55px;
+  right: 0;
+  width: 170px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  padding: 6px 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.editor-access-dropdown li{
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.editor-access-dropdown li:hover{
+  background: #F3F4F6;
+}

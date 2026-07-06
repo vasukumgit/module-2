@@ -1,0 +1,408 @@
+@reference "tailwindcss";
+
+/* =====================
+   DASHBOARD
+===================== */
+
+.dashboard {
+  @apply flex flex-col overflow-hidden font-[Inter];
+  /* padding-top: 112px; */
+  /* height: calc((100vw / 1440px) * 912px); */
+  height: 100vh;
+  padding-top: 112px;
+  overflow: hidden;
+  padding-left: 95px;
+  border-top-left-radius: 30px;
+   
+}
+
+/* =====================
+   BODY
+===================== */
+
+.dashboard-body  {
+  @apply flex flex-1 overflow-hidden;
+  height: 100%;
+}
+
+
+/* =====================
+   SIDEBAR
+===================== */
+
+:root {
+  /* Brand Colors */
+  --brand-primary: #1f6feb;
+
+  /* Shadows */
+  --shadow-sm: 0px 2px 4px 0px #0047791f;
+  --shadow-glow: 0px -1px 16px 0px #00304d14;
+
+  /* Inset Effects */
+  --shadow-inset-light: 0.5px 0.5px 0.5px 0px #26c6da66 inset;
+  --shadow-inset-strong: -0.5px -0.25px 0.5px 0px #26c6da99 inset;
+  --Brand-Secondary-hover: #1fb3c5;
+}
+
+:root {
+  --gradient-brand: linear-gradient(90deg, #41c6ff, #1f6feb, #26c6da);
+}
+
+
+/* Logo */
+.logo-box {
+  @apply w-[42px] h-[42px] flex items-center justify-center
+         bg-gradient-to-br from-indigo-600 to-indigo-500
+         text-white rounded-xl font-semibold text-[18px];
+}
+
+/* Menu */
+.sidebar-menu {
+  @apply flex flex-col gap-[40px] mt-[95px];
+}
+
+.menu-item {
+  @apply flex flex-col items-center text-[12px] text-gray-500
+         cursor-pointer gap-[6px] transition-all duration-300;
+}
+
+.menu-item span {
+  @apply transition-all duration-300;
+}
+
+/* Active Menu */
+.menu-item.active span {
+  @apply translate-y-[6px] bg-[#164DB3] 
+         bg-clip-text text-transparent;
+  font-weight: 600;
+}
+
+.menu-item svg,
+.menu-item i {
+  @apply w-[32px] h-[32px] p-[8px] rounded-[10px]
+         flex items-center justify-center
+         transition-all duration-300;
+}
+
+.menu-item.active svg,
+.menu-item.active i {
+  @apply scale-105 text-[#EAF6FD];
+}
+
+.menu-item.active svg,
+.menu-item.active i {
+  background: var(--brand-primary);
+
+  box-shadow:
+    var(--shadow-sm), var(--shadow-glow), var(--shadow-inset-light),
+    var(--shadow-inset-strong);
+
+  /* border-bottom:5px solid var(--Brand-Secondary-hover); */
+}
+
+/* Hover */
+.menu-item:not(.active):hover {
+  @apply text-blue-600;
+}
+
+.menu-item:not(.active):hover svg,
+.menu-item:not(.active):hover i {
+  @apply bg-[#b1b3d0] text-white shadow-lg;
+}
+
+
+
+/* =====================
+   MAIN
+===================== */
+
+.main {
+  @apply flex-1 flex flex-col overflow-hidden;
+}
+
+.content {
+  @apply flex-1 overflow-y-auto overflow-x-hidden;
+  /* 🔥 Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* =====================
+   ICON
+===================== */
+
+.icon {
+  @apply w-[16px] h-[18px] text-green-500;
+}
+
+/* =====================
+   DASHBOARD WRAPPER
+===================== */
+
+.dashboard-wrapper {
+  width: 100%;
+  height: 100%;
+
+  border-top: 0.5px solid #cbd5e1;
+  border-left: 0.5px solid #cbd5e1;
+  border-top-left-radius: 30px;
+
+  border-top-left-radius: 30px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  
+}
+
+
+.dashboard-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Title */
+.dashboard-title {
+  @apply text-center 
+         text-[38px] 
+         leading-[50px] 
+         font-extrabold 
+         text-slate-900 
+         mb-[16px] 
+         w-[512px] 
+         tracking-tight;
+}
+
+.dashboard-title span {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* optional for better support */
+  background-clip: text;
+  color: transparent;
+}
+
+/* =====================
+   TRASH NAV
+===================== */
+
+.sidebar-trash-nav {
+  @apply flex flex-col items-center justify-center cursor-pointer;
+}
+
+.sidebar-trash-nav span {
+  @apply hidden;
+}
+
+.sidebar-trash-nav.active svg {
+  @apply text-white scale-105 shadow-lg;
+  background: linear-gradient(90deg, #ef4444, #991b1b);
+}
+
+.sidebar-trash-nav:not(.active):hover svg {
+  @apply text-red-500;
+  background: #fee2e2;
+}
+
+/* =====================
+   PRICING MODAL
+===================== */
+
+.pricing-modal-overlay {
+  @apply fixed inset-0 backdrop-blur-md bg-black/40
+         flex items-center justify-center z-[2000] text-center;
+}
+
+.pricing-modal {
+  @apply w-[1100px] bg-gray-50 p-[60px] rounded-[30px] relative
+         animate-[scaleIn_0.3s_ease];
+}
+
+.pricing-close {
+  @apply absolute top-[25px] right-[30px]
+         w-[35px] h-[35px] rounded-full bg-gray-200 cursor-pointer;
+}
+
+.pricing-title {
+  @apply mb-[30px];
+}
+
+.pricing-title span {
+  @apply bg-gradient-to-r from-purple-600 to-pink-500
+         bg-clip-text text-transparent;
+}
+
+/* =====================
+   CREATE DESIGN MODAL
+===================== */
+
+.createdesign-overlay {
+  @apply fixed inset-0 backdrop-blur-lg bg-black/50
+         flex items-center justify-center z-[2000] text-center;
+}
+
+.createdesign-modal {
+  @apply w-[90vw] max-w-[1400px] h-[85vh] max-h-[800px]
+         bg-white rounded-2xl relative overflow-hidden
+         flex flex-col shadow-2xl;
+}
+
+.createdesign-close {
+  @apply absolute top-[20px] right-[20px]
+         w-[40px] h-[40px] rounded-full
+         bg-white/90 text-gray-500
+         flex items-center justify-center
+         shadow-md transition;
+}
+
+.createdesign-close:hover {
+  @apply bg-white text-gray-700 scale-105 shadow-lg;
+}
+
+/* =====================
+   BILLING
+===================== */
+
+.billing-toggle {
+  @apply inline-flex bg-gray-200 rounded-full mb-[50px];
+}
+
+.billing-toggle button {
+  @apply px-[24px] py-[10px] rounded-full font-medium cursor-pointer;
+}
+
+.billing-toggle .active {
+  @apply bg-white shadow-md;
+}
+
+/* =====================
+   PLANS
+===================== */
+
+.plans-container {
+  @apply flex gap-[30px] justify-center;
+}
+
+.plan-card {
+  @apply bg-white p-[40px] w-[300px] rounded-[20px]
+         text-center shadow-md;
+}
+
+.plan-card.featured {
+  @apply border-2 border-blue-500;
+}
+
+.plan-btn {
+  @apply mt-[20px] p-[10px] w-full rounded-xl
+         border border-gray-300 cursor-pointer;
+}
+
+.plan-btn.primary {
+  @apply text-white border-none
+         bg-gradient-to-r from-blue-500 to-indigo-500;
+}
+
+.plan-btn.disabled {
+  @apply bg-gray-100;
+}
+
+/* =========================
+
+Dark Mode
+
+=========================== */
+
+/* ================= DARK THEME ROOT ================= */
+
+:root {
+  --bg-light: #ffffff;
+  --text-light: #000000;
+
+  --neutral-800: #1e293b;
+}
+
+.dark.admin-body {
+  background-color: #1e293b;
+}
+
+.dark .dashboard-wrapper {
+  background-color: #020617;
+}
+
+/* ================= GLOBAL ================= */
+
+.dashboard {
+  /* background: var(--bg-light); */
+  color: var(--text-light);
+}
+
+/* ================= DARK MODE ================= */
+
+/* .dark .dashboard {
+  background: #0f172a;
+} */
+
+/* ================= HEADER ================= */
+
+.dark .header {
+  background: var(--neutral-800);
+}
+
+/* logo text */
+.dark .dashboard-logo-title {
+  color: #ffffff;
+}
+
+/* ================= SIDEBAR ================= */
+
+.dark .sidebar {
+  background: var(--neutral-800);
+}
+
+/* sidebar menu items */
+.dark .menu-item {
+  color: #ffffff;
+}
+
+/* bottom trash icon */
+.dark .sidebar-bottom {
+  color: #ffffff;
+}
+
+/* ================= ICONS ================= */
+
+/* header icons (moon, settings, notification) */
+/* apply white ONLY to normal icons */
+.dark .icon:not(.theme-icon) {
+  filter: brightness(0) invert(1);
+}
+
+/* ensure sun icon keeps original color */
+.theme-icon {
+  filter: none;
+}
+
+/* react-icons (Fi icons) */
+.dark .menu-item svg,
+.dark .sidebar-bottom svg {
+  color: #ffffff;
+}
+
+/* ================= PROFILE ================= */
+
+.dark .profile-avatar img {
+  border: 2px solid #ffffff;
+}
+
+.dark .dashboard-title {
+  color: #ffffff;
+}
+
+ 

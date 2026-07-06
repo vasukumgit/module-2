@@ -1,0 +1,683 @@
+@reference "tailwindcss";
+ 
+/* =========================
+    TEMPLATES COMPONENT
+ ========================= */
+ 
+/*
+ 
+ 
+/* Background Image */
+ 
+.templates-inner-page {
+  @apply px-[24px] py-0;
+}
+ 
+.background-frame {
+  @apply relative w-full py-[56px] flex flex-col items-center justify-center
+         bg-no-repeat bg-center bg-cover rounded-tl-[30px];
+ 
+  /* background-image: url("../../../assets/light_pattern.png"); */
+}
+ 
+/* Dark mode */
+.background-frame {
+  background-image: url("../../../assets/Templates-Page-Image/light-banner.png");
+}
+ 
+/* Left image */
+.img-left {
+  @apply w-[258px] h-[172px] absolute top-[24px] left-[34px];
+}
+ 
+.dark .templates-page {
+  @apply bg-[#020617] rounded-l-[24px]
+  border-t-[1px] border-l-[1px] border-[#475569]
+   min-h-screen text-white relative overflow-hidden;
+}
+ 
+/* Right top */
+.img-right-top {
+  @apply w-[95px] h-[101px] absolute top-[53px] left-[1054px] flex flex-wrap;
+}
+ 
+/* Image / icons */
+.background-img {
+  @apply absolute object-contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+ 
+/* Right bottom */
+.img-right-bottom {
+  @apply w-[178px] h-[119px] absolute top-[122px] right-[104px];
+}
+/* TITLE */
+.templates-title {
+  @apply text-[#020617] text-4xl font-[800] text-center mb-6 top-[98px];
+}
+.templates-title span {
+  @apply bg-gradient-to-r from-[#41C6FF] to-[#1F6FEB] bg-clip-text text-transparent font-[800];
+}
+/* SEARCH */
+.search-wrapper {
+  @apply flex justify-center mb-6 w-[586px];
+}
+.search-box {
+  @apply flex items-center gap-3 bg-[#ffffff] px-5 py-3 rounded-full w-[586px] h-[72px]  cursor-pointer;
+}
+.search-box input {
+  @apply bg-transparent outline-none w-full text-sm;
+}
+.search-icon {
+  @apply text-gray-400 order-0!;
+}
+.search-tag {
+  @apply text-xs text-blue-400;
+}
+.search-wrapper.active .search-box {
+  @apply rounded-[100px];
+}
+/* Suggestions wrapper (inline) */
+.suggestions-inline {
+  @apply h-[40] flex items-center gap-4 flex-wrap text-sm text-gray-400  font-[400] top-[264px];
+}
+ 
+/* "Suggestions:" text */
+.suggestions-inline p {
+  @apply text-[#475569] font-[400];
+}
+ 
+/* Buttons (chips) */
+.suggestions-inline button {
+  @apply bg-[#ffffff] text-[#0F172A] h-[40px]  px-4 py-1 rounded-full font-[400] transition border border-[#CBD5E1] border-[1px];
+}
+ 
+/* .templates-page {
+  @apply bg-[#020617];
+} */
+ 
+.tabs-container {
+  @apply flex w-[1800px] h-[200px] px-6 gap-8 rounded-xl ;
+padding-right: 12px
+}
+ 
+.template-btn {
+  @apply ml-[24px] !rounded-full font-[400];
+  @apply text-[#475569] bg-transparent !bg-[#ffffff];
+}
+.tab {
+  @apply min-w-[128px] max-w-[180px] !border-solid !border-[1px] !border-[#CBD5E1];
+}
+ 
+.template-btn {
+  @apply ml-[24px];
+}
+ 
+/* Hover */
+/* .tap:hover::before{
+  @apply !border !border-[1px] !border-[#475569]  
+} */
+.tab:hover {
+  @apply text-[#EFEFF1] !border-none;
+}
+ 
+/* Active */
+.tab-active {
+  background-color: #1f6feb !important;
+  position: relative;
+  overflow: hidden;
+  /* color: #ffffff;
+  border-radius: 100px;
+  padding: 10px 0px; */
+  box-shadow:
+    0px 2px 4px rgba(0, 71, 121, 0.12),
+    0px -1px 16px rgba(0, 48, 77, 0.08),
+    0.5px 0.5px 0.5px rgba(109, 177, 255, 0.4) inset,
+    -0.5px -0.25px 0.5px rgba(38, 101, 218, 0.6) inset;
+  color: #ffffff;
+}
+.tab-active:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  filter: blur(4px);
+  opacity: 40%;
+  background: var(--Brand-Primary, #26c6da);
+ 
+  left: 0px;
+  top: -78%;
+}
+.tab-active:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  filter: blur(4px);
+  opacity: 40%;
+  background: var(--Brand-Primary, #26c6da);
+ 
+  left: 0px;
+  bottom: -78%;
+}
+/* Header */
+.templates-container {
+  @apply px-6 py-6;
+}
+ 
+.section-Header-T {
+  @apply flex justify-between items-center mb-6;
+}
+ 
+.section-Header-T h3 {
+  @apply text-[#0F172A] text-lg font-semibold;
+}
+ 
+/* SEE ALL BUTTON */
+.template-image-row {
+  @apply relative z-[1];
+}
+.template-image-row img {
+  @apply block m-auto  h-[100%];
+}
+.template-image-row img {
+  @apply block m-auto;
+}
+.template-image-row div div:nth-child(5) img {
+  @apply inline;
+}
+.see-all-btn {
+  @apply w-[99px] h-[40px]  rounded-[100px] text-sm absolute right-[5px] top-[50%] transform -translate-y-[50%] font-[400];
+  @apply bg-[#FFFFFF] text-[#0F172A];
+  @apply hover:bg-gray-200 transition-all duration-300;
+  z-index: 99;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0px 0px 12px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+}
+.card-before {
+  @apply w-[178px] h-[171px] absolute  right-[62px] top-[0px] z-[-1];
+}
+.card-before::after {
+  @apply w-[190px] h-[198px] absolute  right-[-20px] top-[20px] bg-[#1E293B] rounded-[7px] z-[0]
+   content-[''];
+}
+.card-before::before {
+  @apply w-[178px] h-[171px] absolute  right-[-35px] top-[33px] bg-[#1E293B] rounded-[7px] z-[0]
+   content-[''];
+}
+ 
+/*
+===============
+PREMIUM BUTTON
+===============
+*/
+ 
+/* .premium-btn {
+  @apply w-[101px] h-[32px] bg-[#A63C00] top-[202px] left-[60px] rounded-[24px] pl-[20px] pt-[5px] text-[#FFD100];
+ 
+} */
+ 
+.premium-btn {
+  @apply absolute bottom-1.5 left-1/2 -translate-x-1/2;
+  @apply flex items-center gap-1 px-3 py-1;
+  @apply text-xs font-[500] text-[#FFD100];
+  @apply rounded-full;
+  @apply bg-gradient-to-r from-[#A63C00] to-[#F8762D];
+  @apply shadow-md;
+  @apply transition-all duration-300;
+}
+/*  .template-image-row div div:nth-child(5) .premium-btn{
+  @apply !left-[30%];
+} */
+/* BROWSE BUTTON CONTAINER */
+.browse-container {
+  @apply flex justify-center mt-10;
+}
+ 
+/* BROWSE BUTTON */
+.browse-button {
+  @apply w-[300px] h-[56px] top-[1060px] bg-[#1F6FEB] rounded-[16px] border-none text-white font-medium;
+  /* @apply bg-gradient-to-r from-[#1F6FEB] to-[#41C6FF]; */
+  /* @apply hover:opacity-90 transition-all duration-300; */
+}
+ 
+/*  FILTER & SIDEBAR   */
+.filter-sidebar-L {
+  @apply border-[#1F6FEB] text-[#0F172A] max-h-[528px] overflow-y-auto p-5 rounded-2xl border-[1px] border-solid; /* width: 318px; */
+  background: #ffffff; /* sidebar max height */ /* scroll if content is large */
+}
+.filter-header-L {
+  @apply flex justify-between items-center mb-[15px];
+}
+.filter-header-L h3 {
+  @apply text-lg font-semibold;
+}
+.clear {
+  @apply inline-block text-white bg-slate-800 cursor-pointer text-sm px-2 py-1 rounded-[100px];
+}
+.filter-box-L summary {
+  @apply h-14 cursor-pointer font-medium flex justify-between items-center after:w-2.5 after:h-2.5 after:content-[""] after:inline-block after:rotate-45 after:transition-transform after:duration-[0.3s] after:ease-[ease] after:ml-2 after:mr-2.5 after:mb-0.5 after:border-r-[1.5px] after:border-r-white after:border-b-[1.5px] after:border-b-white after:border-solid font-normal cursor-pointer text-sm no-underline mb-2 after:border-t-[0px] after:border-l-[0px]; /* width: 274px; */
+  list-style: none;
+}
+ 
+/* Hide default arrow */
+.filter-box-L summary::-webkit-details-marker {
+  @apply hidden;
+}
+/* Default arrow (down) */
+/* When open → arrow up */
+.filter-box-L[open] summary::after {
+  @apply rotate-[-135deg];
+  /* border: unset; */
+}
+.filter-box-L {
+  @apply border-t-slate-700 border-t-[0.5px] border-0 border-solid;
+}
+.filter-box-L label {
+  @apply font-normal flex items-center gap-2 text-sm cursor-pointer text-[#0F172A] mx-0 my-1.5 p-[5px];
+}
+.filter-box-L input {
+  @apply w-5 h-5;
+}
+.filter-box-L input[type="checkbox"] {
+  @apply hidden; /* background-color: #3b82f6; */ /* appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #64748B;
+  border-radius: 4px;
+  position: relative; */
+}
+/* input[type="checkbox"]:checked {
+  background-color: #4CAF50;
+   accent-color: #adadad;
+} */
+.checkmark {
+  @apply w-5 h-5 inline-block rounded border border-slate-500 rounded relative cursor-pointer border-solid;
+}
+input[type="checkbox"]:checked + .checkmark {
+  @apply bg-[#0F172A] after:content-["✔"] after:text-[white] after:text-base after:absolute after:top-[-3] after:left-[3px];
+}
+.filter-sidebar-L::-webkit-scrollbar {
+  @apply w-1 h-44; /* scrollbar width (decrease size here) */
+}
+.filter-sidebar-L::-webkit-scrollbar-track {
+  background: transparent;
+}
+.filter-sidebar-L::-webkit-scrollbar-thumb {
+  @apply rounded-[10px];
+  background: #cfcfcf;
+}
+ 
+/* Filter Search Bar */
+.filter-search-L {
+  @apply w-full h-10 flex items-center gap-2 border-[#CBD5E1] mt-3 mb-5 mx-0 px-3 py-0 rounded-[100px] border-[0.5px] border-solid;
+  background: #f8fafc;
+}
+ 
+/* Search Icon */
+.filter-search-L-icon {
+  @apply text-base text-[#94A3B8];
+}
+ 
+/* Input */
+.filter-search-L input {
+  @apply w-full text-sm text-slate-400 border-0;
+  outline: none;
+  background: transparent;
+}
+.temp-filter-btn {
+  @apply flex items-center gap-2 border text-[15px] text-[#1F6FEB] cursor-pointer transition-all duration-[0.2s] ease-[ease] cursor-pointer p-0 rounded-[100px] border-solid;
+  background: #ffffff;
+}
+.temp-filter-btn .fil-btn {
+  @apply cursor-pointer text-[#1F6FEB] flex items-center pl-6 pr-2 py-4 border-[unset];
+  background: unset;
+  border: unset;
+}
+ 
+.temp-filter-btn .fil-btn svg path,
+.temp-filter-btn .fil-close svg path {
+  stroke: #1f6feb;
+}
+.fil-btn-p {
+  @apply !pr-[24px];
+}
+.temp-filter-btn .fil-btn span {
+  @apply inline-block text-base leading-6 font-medium ml-[10.75px];
+}
+.temp-filter-btn .fil-close {
+  @apply cursor-pointer leading-[0px] pl-2 pr-6 py-0 border-[unset];
+  background: unset;
+  border: unset;
+}
+ 
+.clear-btn {
+  @apply text-lg cursor-pointer text-[#888] border-[none] hover:text-black;
+  background: transparent;
+}
+ 
+/*==================================================================================
+================================= Dark Theme started ===========================
+===================================================================================== */
+.dark .temp-filter-btn .fil-btn svg path,
+.dark .temp-filter-btn .fil-close svg path {
+  stroke: #ffffff;
+}
+.dark .background-frame {
+  background-image: url("../../../assets/dark_pattern.png");
+}
+/* Image / icons */
+.dark .background-img {
+  @apply absolute object-contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+ 
+/* Right bottom */
+.img-right-bottom {
+  @apply w-[178px] h-[119px] absolute top-[122px] right-[104px];
+}
+/* TITLE */
+.dark .templates-title {
+  @apply text-[#FFFFFF] text-4xl font-[800] text-center mb-6 top-[98px];
+}
+.dark .templates-title span {
+  @apply bg-gradient-to-r from-[#41C6FF] to-[#1F6FEB] bg-clip-text text-transparent font-[800];
+}
+/* SEARCH */
+.dark .search-wrapper {
+  @apply flex justify-center mb-6 w-[586px];
+}
+.dark .search-box {
+  @apply flex items-center gap-3 bg-[#1E293B] px-5 py-3 rounded-full w-[586px] h-[72px]  cursor-pointer;
+}
+.dark .search-box input {
+  @apply bg-transparent outline-none w-full text-sm text-[#FFF];
+}
+.dark .search-icon {
+  @apply text-gray-400;
+}
+.dark .search-tag {
+  @apply text-xs text-blue-400;
+}
+.dark .search-wrapper.active .search-box {
+  @apply rounded-[100px];
+}
+/* Suggestions wrapper (inline) */
+.dark .suggestions-inline {
+  @apply h-[40] flex items-center gap-4 flex-wrap text-sm text-gray-400  font-[400] top-[264px];
+}
+ 
+/* "Suggestions:" text */
+.dark .suggestions-inline p {
+  @apply text-[#F1F5F9] font-[400];
+}
+ 
+/* Buttons (chips) */
+.dark .suggestions-inline button {
+  @apply bg-[#1E293B] text-[#F1F5F9] h-[40px]  px-4 py-1 rounded-full font-[400] transition border border-[#475569] border-[1px];
+}
+ 
+/* .templates-page {
+  @apply bg-[#020617];
+} */
+ 
+.dark .tabs-container {
+  @apply rounded-xl w-[1100px];
+}
+ 
+.dark .template-btn {
+  @apply ml-[24px] rounded-full font-[400];
+  @apply text-[#EFEFF1] bg-transparent !bg-[#020617];
+}
+.dark .tab {
+  @apply min-w-[128px] max-w-[180px] !border-solid !border-[1px] !border-[#475569];
+}
+ 
+.dark .template-btn {
+  @apply ml-[24px];
+}
+ 
+/* Hover */
+/* .tap:hover::before{
+  @apply !border !border-[1px] !border-[#475569]  
+} */
+.dark .tab:hover {
+  @apply text-[#EFEFF1] !border-none;
+}
+ 
+/* Active */
+.dark .tab-active {
+  background-color: rgba(31, 111, 235, 0.5) !important;
+  position: relative;
+  overflow: hidden;
+  /* color: #ffffff;
+  border-radius: 100px;
+  padding: 10px 0px; */
+  box-shadow:
+    0px 2px 4px rgba(0, 71, 121, 0.12),
+    0px -1px 16px rgba(0, 48, 77, 0.08),
+    0.5px 0.5px 0.5px rgba(109, 177, 255, 0.4) inset,
+    -0.5px -0.25px 0.5px rgba(38, 101, 218, 0.6) inset;
+}
+.dark.tab-active:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  filter: blur(4px);
+  opacity: 40%;
+  background: var(--Brand-Primary, rgba(31, 111, 235, 1));
+ 
+  left: 0px;
+  top: -78%;
+}
+.dark .tab-active:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  filter: blur(4px);
+  opacity: 40%;
+  background: var(--Brand-Primary, rgba(31, 111, 235, 1));
+ 
+  left: 0px;
+  bottom: -78%;
+}
+/* Header */
+.dark .templates-container {
+  @apply px-6 py-6 bg-[#020617] min-h-screen;
+}
+ 
+.dark .section-Header-T {
+  @apply flex justify-between items-center mb-6;
+}
+ 
+.dark .section-Header-T h3 {
+  @apply text-[#FFFFFF] text-lg font-semibold;
+}
+ 
+/* SEE ALL BUTTON */
+.dark .template-image-row {
+  @apply relative z-[1];
+}
+.dark .template-image-row img {
+  @apply block m-auto  h-[100%];
+}
+.dark .template-image-row img {
+  @apply block m-auto;
+}
+.dark .template-image-row div div:nth-child(5) img {
+  @apply inline;
+}
+.dark .see-all-btn {
+  @apply w-[99px] h-[40px]  rounded-[100px] text-sm absolute right-[5px] top-[50%] transform -translate-y-[50%] font-[400];
+  @apply bg-[#FFFFFF] text-[#0F172A];
+  @apply hover:bg-gray-200 transition-all duration-300;
+  z-index: 99;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dark .card-before {
+  @apply w-[178px] h-[171px] absolute  right-[62px] top-[0px] z-[-1];
+}
+.dark .card-before::after {
+  @apply w-[190px] h-[198px] absolute  right-[-20px] top-[20px] bg-[#1E293B] rounded-[7px] z-[0]
+   content-[''];
+}
+.dark .card-before::before {
+  @apply w-[178px] h-[171px] absolute  right-[-35px] top-[33px] bg-[#1E293B] rounded-[7px] z-[0]
+   content-[''];
+}
+ 
+/*
+===============
+PREMIUM BUTTON
+===============
+*/
+ 
+/* .premium-btn {
+  @apply w-[101px] h-[32px] bg-[#A63C00] top-[202px] left-[60px] rounded-[24px] pl-[20px] pt-[5px] text-[#FFD100];
+ 
+} */
+ 
+.premium-btn {
+  @apply absolute bottom-1.5 left-1/2 -translate-x-1/2;
+  @apply flex items-center gap-1 px-3 py-1;
+  @apply text-xs font-[500] text-[#FFD100];
+  @apply rounded-full;
+  @apply bg-gradient-to-r from-[#A63C00] to-[#F8762D];
+  @apply shadow-md;
+  @apply transition-all duration-300;
+}
+/* .dark .template-image-row div div:nth-child(5) .premium-btn{
+  @apply !left-[30%];
+} */
+/* BROWSE BUTTON CONTAINER */
+.dark .browse-container {
+  @apply flex justify-center mt-10;
+}
+ 
+/* BROWSE BUTTON */
+.dark .browse-button {
+  @apply w-[300px] h-[56px] top-[1060px] bg-[#1F6FEB] rounded-[16px] border-none text-white font-medium;
+  /* @apply bg-gradient-to-r from-[#1F6FEB] to-[#41C6FF]; */
+  /* @apply hover:opacity-90 transition-all duration-300; */
+}
+ 
+/*  FILTER & SIDEBAR   */
+.dark .filter-sidebar-L {
+  @apply border-slate-600 text-white max-h-[528px] overflow-y-auto p-5 rounded-2xl border-[0.5px] border-solid; /* width: 318px; */
+  background: #0f172a; /* sidebar max height */ /* scroll if content is large */
+}
+.dark .filter-header-L {
+  @apply flex justify-between items-center mb-[15px];
+}
+.dark .filter-header-L h3 {
+  @apply text-lg;
+}
+.dark .clear {
+  @apply inline-block text-white bg-slate-800 cursor-pointer text-sm px-2 py-1 rounded-[100px];
+}
+.dark .filter-box-L summary {
+  @apply h-14 cursor-pointer font-semibold flex justify-between items-center after:w-2.5 after:h-2.5 after:content-[""] after:inline-block after:rotate-45 after:transition-transform after:duration-[0.3s] after:ease-[ease] after:ml-2 after:mr-2.5 after:mb-0.5 after:border-r-[1.5px] after:border-r-white after:border-b-[1.5px] after:border-b-white after:border-solid font-normal cursor-pointer text-sm no-underline mb-2 after:border-t-[0px] after:border-l-[0px]; /* width: 274px; */
+  list-style: none;
+}
+ 
+/* Hide default arrow */
+.dark .filter-box-L summary::-webkit-details-marker {
+  @apply hidden;
+}
+/* Default arrow (down) */
+/* When open → arrow up */
+.dark .filter-box-L[open] summary::after {
+  @apply rotate-[-135deg];
+  /* border: unset; */
+}
+.dark .filter-box-L {
+  @apply border-t-slate-700 border-t-[0.5px] border-0 border-solid;
+}
+.dark .filter-box-L label {
+  @apply font-normal flex items-center gap-2 text-sm cursor-pointer text-white mx-0 my-1.5 p-[5px];
+}
+.dark .filter-box-L input {
+  @apply w-5 h-5;
+}
+.dark .filter-box-L input[type="checkbox"] {
+  @apply hidden; /* background-color: #3b82f6; */ /* appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #64748B;
+  border-radius: 4px;
+  position: relative; */
+}
+/* input[type="checkbox"]:checked {
+  background-color: #4CAF50;
+   accent-color: #adadad;
+} */
+.dark .checkmark {
+  @apply w-5 h-5 inline-block rounded border border-slate-500 rounded relative cursor-pointer border-solid;
+}
+.dark input[type="checkbox"]:checked + .checkmark {
+  @apply bg-[#1F6FEB] after:content-["✔"] after:text-[white] after:text-base after:absolute after:top-[-3] after:left-[3px];
+}
+.dark .filter-sidebar-L::-webkit-scrollbar {
+  @apply w-1 h-44; /* scrollbar width (decrease size here) */
+}
+.dark .filter-sidebar-L::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark .filter-sidebar-L::-webkit-scrollbar-thumb {
+  @apply rounded-[10px];
+  background: #cfcfcf;
+}
+ 
+/* Filter Search Bar */
+.dark .filter-search-L {
+  @apply w-full h-10 flex items-center gap-2 border-slate-500 mt-3 mb-5 mx-0 px-3 py-0 rounded-[100px] border-[0.5px] border-solid;
+  background: #1e293b;
+}
+ 
+/* Search Icon */
+.dark .filter-search-L-icon {
+  @apply text-base text-slate-400;
+}
+ 
+/* Input */
+.dark .filter-search-L input {
+  @apply w-full text-sm text-slate-400 border-0;
+  outline: none;
+  background: transparent;
+}
+.dark .temp-filter-btn {
+  @apply flex items-center gap-2 border border-slate-600 text-[15px] text-[#666] cursor-pointer transition-all duration-[0.2s] ease-[ease] cursor-pointer p-0 rounded-[100px] border-solid;
+  background: #1e293b;
+}
+.dark .temp-filter-btn .fil-btn {
+  @apply cursor-pointer text-white flex items-center pl-6 pr-2 py-4 border-[unset];
+  background: unset;
+  border: unset;
+}
+.dark .fil-btn-p {
+  @apply !pr-[24px];
+}
+.dark .temp-filter-btn .fil-btn span {
+  @apply inline-block text-base leading-6 font-medium ml-[10.75px];
+}
+.dark .temp-filter-btn .fil-close {
+  @apply cursor-pointer leading-[0px] pl-2 pr-6 py-0 border-[unset];
+  background: unset;
+  border: unset;
+}
+.dark .clear-btn {
+  @apply text-lg cursor-pointer text-[#888] border-[none] hover:text-black;
+  background: transparent;
+}

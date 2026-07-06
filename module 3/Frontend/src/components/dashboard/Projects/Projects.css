@@ -1,0 +1,84 @@
+/* =========================================
+   PROJECTS PAGE SPECIFIC STYLES
+   ========================================= */
+
+/* Import shared styles */
+@import "./SharedStyles.css";
+
+/* =========================================
+   PROJECT-SPECIFIC STYLES
+   ========================================= */
+
+.project-card {
+  border: 1px solid rgba(203, 213, 225, 1);
+  border-radius: 16px !important;
+  box-shadow:
+    0px 4px 24px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.04);
+}
+
+/* Project Type Icon Colors */
+.st-type-icon-box.st-type-image {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.st-type-icon-box.st-type-card {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.st-type-icon-box.st-type-presentation {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+/* List Icon Overlay Colors for Projects */
+.st-list-icon-overlay.st-type-image {
+  color: #16a34a;
+}
+
+.st-list-icon-overlay.st-type-card {
+  color: #0284c7;
+}
+
+.st-list-icon-overlay.st-type-presentation {
+  color: #9333ea;
+}
+
+/* =========================================
+   PROJECT-SPECIFIC DARK MODE STYLES
+   ========================================= */
+
+.dark .st-type-icon-box.st-type-image {
+  background: rgba(22, 163, 74, 0.2);
+  color: #22c55e;
+}
+
+.dark .st-type-icon-box.st-type-card {
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+}
+
+.dark .st-type-icon-box.st-type-presentation {
+  background: rgba(124, 58, 237, 0.2);
+  color: #a78bfa;
+}
+
+.dark .st-list-icon-overlay.st-type-image {
+  color: #22c55e;
+}
+
+.dark .st-list-icon-overlay.st-type-card {
+  color: #60a5fa;
+}
+
+.dark .st-list-icon-overlay.st-type-presentation {
+  color: #a78bfa;
+}
+
+
+.dark .project-card {
+  border: 1px solid rgba(203, 213, 225, 1);
+
+}

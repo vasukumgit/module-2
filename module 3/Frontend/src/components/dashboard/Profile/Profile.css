@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+/* =====================
+     PROFILE OVERLAY
+===================== */
+
+.profile-container {
+  @apply absolute top-[84%] right-0 mt-2 w-[357px] h-[582px] z-[1000];
+}
+
+.profile-container:hover {
+  @apply opacity-100 visible;
+}
+
+.profile-card {
+  @apply bg-white rounded-[16px] border h-full flex flex-col p-4;
+
+  
+  border-width: 0.5px;
+  border-color: #CBD5E1;
+
+  box-shadow: 
+    0px 0px 16px 0px #0000000A,
+    0px 4px 4px 0px #00000029;
+}
+
+.profile-loading {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.profile-loading p {
+  @apply text-sm text-gray-500;
+}
+
+
+/* HEADER */
+
+.profile-header {
+  @apply flex justify-between items-center h-[96px] border-b border-[#E6E6E6] flex-shrink-0;
+}
+
+.profile-info {
+  @apply flex items-center gap-3;
+}
+
+.profile-avatar {
+  @apply w-[72px] h-[72px] rounded-full object-cover;
+}
+
+.profile-header h3 {
+  @apply text-[16px] m-0;
+}
+
+.profile-header p {
+  @apply text-[13px] text-[#666] mt-[2px];
+}
+
+.profile-arrow {
+  @apply text-[#888] text-[18px] cursor-pointer;
+}
+
+/* PLAN SECTION */
+
+.plan-section {
+  @apply mt-4 mb-4 flex-shrink-0;
+
+  border-radius: 12px 12px 28px 28px;
+
+  padding: 1px; /* gradient border thickness */
+
+  background: conic-gradient(
+    from 140.69deg at 52.15% 38.95%,
+    #E2E8F0 -28.44deg,
+    #CBD5E1 89.13deg,
+    #E4E4E7 177.41deg,
+    #26C6DA 272.95deg,
+    #E2E8F0 331.56deg,
+    #CBD5E1 449.13deg
+  );
+}
+
+.plan-inner {
+  @apply h-full p-[12px];
+
+  border-radius: 11px 11px 27px 27px; /* slightly smaller to fit inside */
+
+  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
+}
+
+.plan-label {
+  @apply text-[12px] text-[#64748B] mb-2;
+}
+
+.plan-grid {
+  @apply grid grid-cols-[1fr_auto] items-start gap-y-1 gap-x-2;
+}
+
+.plan-left h4 {
+  @apply m-0 text-[18px] text-[#0F172A];
+  font-weight: 600;
+}
+
+.plan-left p {
+  @apply text-[13px] text-[#475569] mt-[2px] leading-snug;
+}
+
+.plan-right {
+  @apply text-right;
+}
+
+.plan-right h4 {
+  @apply m-0 text-[18px] text-[#0F172A];
+  font-weight: 600;
+}
+
+.plan-right span {
+  @apply text-[12px] text-[#475569];
+}
+
+/* BUTTON */
+
+.upgrade-btn {
+  @apply mt-4 w-full h-[44px] col-span-2 flex items-center justify-center gap-2
+  px-4 rounded-full text-white font-medium text-[14px]
+  bg-[#2F6FDB] border border-[#2A64C5]
+  cursor-pointer
+  transition-all duration-300 ease-in-out;
+
+  box-shadow: 
+    0px 0px 24px rgba(2, 96, 240, 0.24),
+    0px 0px 13px rgba(12, 90, 211, 0.12);
+}
+
+.upgrade-btn:hover {
+  @apply bg-[#2A64C5];
+
+  box-shadow:
+    0px 0px 32px rgba(2, 96, 240, 0.45),
+    0px 0px 18px rgba(12, 90, 211, 0.35);
+}
+
+.upgrade-btn:active {
+  transform: scale(0.98);
+}
+
+.upgrade-btn img{
+  @apply w-[18px] h-[18px];
+}
+
+/* LINKS */
+
+.links {
+  @apply flex flex-col gap-6 border-b border-[#E6E6E6] py-4 flex-1;
+
+}
+
+.link-item {
+  @apply flex items-center gap-3 text-[16px] font-normal text-[#4E4E4E] cursor-pointer;
+}
+
+/* SIGNOUT */
+
+.signout {
+  @apply flex items-center gap-3 py-4 cursor-pointer text-[#EF4444] flex-shrink-0 ;
+}
+
+
+
+/* Dark Mode */
+
+.dark .profile-card {
+  @apply text-white;
+
+  background: linear-gradient(180deg, #0F172A 0%, #020617 100%);
+  border-color: #334155;
+
+  box-shadow:
+    0px 0px 40px rgba(37, 99, 235, 0.25),
+    inset 0px 0px 20px rgba(255, 255, 255, 0.02);
+}
+
+.dark .profile-loading p {
+  color: #94A3B8;
+}
+
+.dark .profile-header {
+  border-bottom: 0.5px solid #334155;
+}
+
+.dark .profile-header h3 {
+  @apply text-white;
+}
+
+.dark .profile-header p {
+  color: #94A3B8;
+}
+
+.dark .profile-arrow {
+  color: #CBD5E1;
+  cursor: pointer;
+}
+
+.dark .plan-section {
+  border-radius: 12px 12px 28px 28px;
+  padding: 1px;
+
+  /* ✅ Figma conic gradient border */
+  background: conic-gradient(
+    from 140.69deg at 52.15% 38.95%,
+    #1F6FEB -18.8deg,
+    #020617 89.13deg,
+    #334155 160.38deg,
+    #6CC6C6 253.49deg,
+    #1F6FEB 341.2deg,
+    #020617 449.13deg
+  );
+}
+
+
+.dark .plan-inner {
+  border-radius: 11px 11px 27px 27px;
+  padding: 12px;
+
+  /* ✅ EXACT Figma background */
+  background: linear-gradient(
+    180deg,
+    #020617 0%,
+    #0B217D 100%
+  );
+
+  /* optional subtle inner border */
+  border: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.dark .plan-label {
+  color: #94A3B8;
+}
+
+.dark .plan-left h4,
+.dark .plan-right h4 {
+  @apply text-white;
+}
+
+.dark .plan-left p,
+.dark .plan-right span {
+  color: #94A3B8;
+}
+
+
+.dark .upgrade-btn {
+  @apply mt-4 w-full h-[44px] flex items-center justify-center gap-2
+         px-4 rounded-full text-white font-medium text-[14px];
+
+  /* ✅ Figma background */
+  background: #1F6FEB;
+
+  /* ✅ Figma dual shadow */
+  box-shadow:
+    0px 0px 24px 0px #1F6FEB3D,
+    0px 0px 13px 0px #0A33721F;
+
+  border: none;
+}
+
+/* .dark .upgrade-btn:hover {
+  box-shadow:
+    0px 12px 40px rgba(37, 99, 235, 0.8),
+    0px 0px 30px rgba(59, 130, 246, 0.6);
+} */
+
+.dark .links {
+  border-color: #334155;
+}
+
+.dark .link-item {
+  color: #F8FAFC;
+}
+
+.dark .link-item:hover {
+  color: #60A5FA;
+}
+
+.dark .signout {
+  color: #F87171;
+}

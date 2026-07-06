@@ -1,0 +1,155 @@
+@reference "tailwindcss";
+
+/* =====================
+   DASHBOARD HEADER
+   ===================== */
+
+/* HEADER CONTAINER */
+.header {
+  @apply flex items-center px-8 bg-white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 112px;
+  z-index: 999;
+
+  flex-shrink: 0;
+}
+
+/* LEFT CONTAINER */
+.header-left {
+  @apply flex items-center gap-2 h-[64px];
+  width: 188px;
+  margin-left: -10px;
+}
+
+.dashboard-header-logo {
+  @apply w-[64px] h-[64px];
+}
+
+/* LOGO CONTAINER */
+.logo-icon {
+  @apply w-[64px] h-[64px] rounded-xl flex items-center justify-center bg-white shadow-sm overflow-hidden;
+}
+
+/* LOGO IMAGE */
+.logo-img {
+  @apply w-full h-full object-contain;
+}
+
+/* TEXT CONTAINER */
+.dashboard-logo-text {
+  @apply flex flex-col;
+  width: 116px;
+  height: 51px;
+  margin: 6.5px 0 6.5px 8px;
+  gap: 3px;
+}
+
+/* LOGO TITLE */
+.dashboard-logo-title {
+  font-family: "General Sans Variable", sans-serif;
+  @apply font-semibold text-[32px] leading-[24px] text-center text-[#082E6D];
+}
+
+/* LOGO SUBTEXT */
+.dashboard-logo-sub {
+  font-family: "General Sans Variable", sans-serif;
+  @apply font-medium text-[12px] leading-[24px] text-[#005C7A];
+  margin: 3px 5px 0 0;
+  text-align: center;
+  letter-spacing: 0.8em;
+}
+
+/* RIGHT CONTAINER */
+.header-right {
+  @apply flex items-center ml-auto gap-6;
+  height: 72px;
+  margin-right: 8px;
+  padding: 12px 24px 12px 16px;
+  border-radius: 52px;
+}
+
+/* ICON GROUP */
+.header-icons {
+  @apply flex items-center gap-4 h-full;
+}
+
+/* OUTER CONTAINER (Frame) */
+.icon-container {
+  @apply w-10 h-10 flex items-center justify-center rounded-full;
+}
+
+
+/* INNER WRAPPER (Group) */
+.icon-inner {
+  @apply flex items-center justify-center gap-[8px];
+}
+
+.icon-container img {
+  @apply w-[18px] h-[18px];
+}
+
+
+
+/* SVG (Vector) */
+.icon {
+  @apply text-gray-600 cursor-pointer;
+}
+
+.icon:hover {
+  @apply text-blue-500;
+}
+
+/* PROFILE */
+.profile-avatar {
+  @apply flex items-center justify-center h-full;
+}
+
+.profile-avatar img {
+  @apply w-12 h-12 rounded-full cursor-pointer;
+}
+
+.profile-wrapper {
+  @apply flex flex-col items-center relative;
+}
+
+
+
+/* Bug related */
+
+.icon-container.active {
+  background: rgba(31, 111, 235, 0.12);
+}
+
+.icon-container.active img {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(92%) saturate(1842%)
+    hue-rotate(210deg) brightness(97%) contrast(96%);
+}
+
+.dark .icon-container:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark .icon-container.active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.icon-container {
+  @apply w-10 h-10 flex items-center justify-center rounded-full cursor-pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-container:hover {
+  background-color: rgba(31, 111, 235, 0.08);
+}
+
+.icon-container:hover img {
+  transform: scale(1.05);
+}
+
+.icon-container img {
+  transition: all 0.2s ease;
+}

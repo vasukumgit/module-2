@@ -1,0 +1,287 @@
+/* =========================
+   CARD CONTAINER (FIGMA)
+========================= */
+.pj-folder-page .st-grid-layout .st-card-container {
+  position: relative;
+  width: 306px;
+  height: 264px;
+  border-radius: 18px;
+  overflow: hidden;
+
+  /* background: linear-gradient(180deg, #dbe2ea 0%, #e9eef4 100%); */
+    background-image: url("../../../../assets/Folders/folder.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+/* 
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.04),
+    0 10px 20px rgba(0,0,0,0.06); */
+}
+
+/* Folder top shape */
+.pj-folder-page .st-grid-layout .st-card-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 60%;
+  height: 60px; */
+
+  /* background: linear-gradient(180deg, #cfd8e3 0%, #dbe2ea 100%); */
+  border-bottom-right-radius: 20px;
+  z-index: 1;
+}
+
+/* light overlay */
+/* .pj-folder-page .st-grid-layout .st-card-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.25) 0%,
+    rgba(255,255,255,0) 40%
+  );
+
+  pointer-events: none;
+} */
+
+/* =========================
+   PREVIEW SECTION
+========================= */
+.pj-folder-page .st-card-preview {
+  position: relative;
+  margin-left: 28px;
+  height: 160px; /* enough space for images */
+  overflow: hidden;
+  z-index: 2;
+}
+
+
+
+/* floating images */
+.pj-folder-page .st-preview-img {
+  position: absolute;
+  border-radius: 10px;
+  object-fit: cover;
+  /* box-shadow: 0 10px 20px rgba(0,0,0,0.15); */
+}
+
+/* LEFT IMAGE */
+.pj-folder-page .img1 {
+  width: 100px;
+  height: 128px;
+  top: 56.5px;
+  left: 12px;
+  /* transform: rotate(-18deg); */
+  z-index: 1;
+}
+
+/* CENTER IMAGE (MAIN FOCUS) */
+.pj-folder-page .img2 {
+  width: 100px;
+  height: 128px;
+  top: 56px;
+  left: 70px;
+  /* transform: rotate(-5deg); */
+  z-index: 3;
+}
+
+/* RIGHT IMAGE */
+.pj-folder-page .img3 {
+  width: 100px;
+  height: 128px;
+  top: 95px;
+  left: 146px;
+  /* transform: rotate(15deg); */
+  z-index: 3;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+.pj-folder-page .st-card-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 1);
+  padding: 15px ;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border: 1px solid rgba(203, 213, 225, 1);
+}
+
+.pj-folder-page .st-folder-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ef4444;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* .st-footer-text{
+  margin: 5px;
+} */
+
+.pj-folder-page .st-footer-text h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pj-folder-page .st-footer-text p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.pj-folder-page .st-footer-text span {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* =========================
+   STAR BUTTON
+========================= */
+.pj-folder-page .st-card-star-btn {
+  position: absolute;
+  top: 56px;
+  right: 15.5px;
+  background: #FFF;
+  border-radius: 10px ;
+  padding: 6px;
+  z-index: 5;
+}
+
+
+
+
+
+
+/* Dark mode */
+
+.dark .pj-folder-page .st-grid-layout .st-card-container {
+  background-image: url("../../../../assets/Folders/dark_folder.png"); /* ✅ preferred */
+  /* fallback if you don’t have image */
+  /* background-color: #1e293b; */
+  background-size: cover;
+  background-position: center;
+
+  /* border: 1px solid rgba(71, 85, 105, 0.6); */
+
+  /* box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05); */
+}
+
+
+.dark .pj-folder-page .st-grid-layout .st-card-container::after {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08) 0%,
+    rgba(0,0,0,0.2) 100%
+  );
+}
+
+
+.dark .pj-folder-page .st-preview-img {
+  /* box-shadow: 0 12px 25px rgba(0,0,0,0.6); */
+}
+
+
+.dark .pj-folder-page .st-card-footer {
+  background: #1e293b;
+  border: 1px solid rgba(71, 85, 105, 0.6);
+
+  color: #e2e8f0;
+}
+
+
+.dark .pj-folder-page .st-footer-text h4 {
+  color: #f1f5f9;
+}
+
+.dark .st-footer-text p {
+  color: #94a3b8;
+}
+
+.dark .pj-folder-page .st-footer-text span {
+  color: #64748b;
+}
+
+
+.dark .pj-folder-page .st-folder-badge {
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.05);
+}
+
+
+.dark .pj-folder-page .st-card-star-btn {
+  /* background: #0f172a; */
+  border: 1px solid rgba(71, 85, 105, 0.6);
+}
+
+
+.dark .pj-folder-page .st-card-container {
+  /* filter: drop-shadow(0 0 12px rgba(255,255,255,0.08)); */
+}
+
+/* =======================================================
+   RESETS TO ENSURE LIST ROW LAYOUT MATCHES PROJECTS
+   ======================================================= */
+.pj-folder-page .st-list-layout .st-card-container.st-list-row {
+  width: 100% !important;
+  height: 72px !important;
+  background-image: none !important;
+  background: transparent !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.pj-folder-page .st-list-layout .st-card-container.st-list-row::before,
+.pj-folder-page .st-list-layout .st-card-container.st-list-row::after {
+  display: none !important;
+}
+
+.pj-folder-page .st-list-row .st-card-star-btn {
+  position: static !important;
+  margin-right: 12px;
+}
+
+.pj-folder-page .st-list-row .st-card-media {
+  width: 80px !important;
+  height: 52px !important;
+  margin: 0 15px !important;
+  background: #f1f5f9 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+}
+
+.pj-folder-page .st-list-row .st-card-details {
+  display: grid !important;
+  grid-template-columns: 2.5fr 1.3fr 1fr 1fr 48px !important;
+  align-items: center !important;
+  flex: 1;
+  width: 100%;
+}

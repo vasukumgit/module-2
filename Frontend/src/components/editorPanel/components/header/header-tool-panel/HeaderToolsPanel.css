@@ -1,0 +1,208 @@
+/* WRAPPER */
+.header-toolbar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.header-toolbar-box {
+  height: 64px;
+  width: 464px;
+  background-color: #ffffff;
+  border-radius: 100px;
+  border: 0.5px solid #cbd5e1;
+  box-shadow: 0px 0px 24px 0px #8f8f8f1f;
+  box-shadow: 0px 0px 4px 0px #8f8f8f29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-toolbar-box ul {
+  display: flex;
+  gap: 24px;
+}
+
+/* EACH TOOL */
+.header-toolbar-item {
+  position: relative;
+}
+
+/* TOOL BUTTON */
+
+.header-tool-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Button label */
+.header-tool-button span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-align: center;
+}
+
+.header-tool-button.selected span {
+  color: #020617;
+}
+
+/* Smooth transition */
+.header-tool-button span {
+  transition: all 0.2s ease;
+}
+
+/* TOOL ICON ROW  */
+.header-tool-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 24px;
+}
+
+/* default icon */
+.header-tool-icons img:first-child {
+  width: 32px;
+  height: 32px;
+  transition: all 0.2s ease;
+}
+
+/* selected icon (ONLY this grows) */
+
+.header-tool-button.selected .header-tool-icons img:first-child {
+  width: 32px;
+  height: 32px;
+  background-color: #f1f5f9;
+  border: 0.5px solid #cbd5e1;
+  border-radius: 100px;
+}
+
+.header-tool-icons img:last-child {
+  width: 12px;
+  height: 12px;
+  opacity: 0.7;
+}
+
+/* LABEL */
+.header-tool-button p {
+  margin: 0;
+  font-size: 12px;
+}
+
+/* DROPDOWN */
+.header-tool-dropdown {
+  position: absolute;
+  top: 53px;
+  left: 0;
+  width: 172px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0px 0px 16px 0px #00000029;
+  z-index: 999;
+}
+
+/* ITEM */
+
+.header-tool-option {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.header-dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* LEFT GROUP */
+
+.header-dropdown-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* CHECK ICON */
+.check {
+  width: 12px;
+  opacity: 0;
+  font-size: 14px;
+}
+
+.check.show {
+  opacity: 1;
+}
+
+/* ICON */
+.header-dropdown-icons {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  gap: 8px;
+}
+
+/* RIGHT SHORTCUT */
+
+.shortcut {
+  font-size: 10px;
+  font-weight: 500;
+  color: #94a3b8;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* 
+=====================
+DARK THEME
+=====================
+
+*/
+.dark .header-toolbar-box {
+  background-color: #0f172a;
+  border: 0.5px solid #334155;
+}
+
+.dark .header-tool-button.selected .header-tool-icons img:first-child {
+  background-color: #334155;
+  border: 0.5px solid #1e293b;
+}
+
+/* DROPDOWN */
+.dark .header-tool-dropdown {
+  background: #0f172a;
+  border: 0.5px solid #334155;
+}
+
+.dark .header-tool-option {
+  color: #f8fafc;
+}
+
+.dark .check {
+  color: #ffffff;
+}
+
+.dark .shortcut {
+  color: #64748b;
+}
+
+.dark .header-tool-icons {
+  color: #94a3b8;
+}

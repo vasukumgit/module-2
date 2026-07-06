@@ -1,0 +1,375 @@
+/* =========================================
+   GOOGLE FONTS
+========================================= */
+ 
+/* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Bebas+Neue&family=Montserrat:wght@400;700;900&family=Anton&family=Permanent+Marker&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&family=Inter:wght@400;500;600;700&display=swap%22); */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue&family=Montserrat:wght@700;900&family=Anton&family=Permanent+Marker&family=Libre+Baskerville:wght@700&family=Pacifico&display=swap');
+/* =========================================
+   DROPDOWN CONTAINER
+========================================= */
+ 
+.textstyles-dropdown-menu {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+ 
+  width: 360px;
+  height: calc((100vh / 1024px) * 700px);
+  min-height: 480px;
+  max-height: 760px;
+ 
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 34px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+ 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+ 
+  z-index: 99;
+  font-family: "Inter", sans-serif;
+}
+ 
+/* =========================================
+   HEADER
+========================================= */
+ 
+.textstyles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 18px;
+  flex-shrink: 0;
+}
+ 
+.textstyles-title-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+ 
+.textstyles-title-box img {
+  width: 20px;
+  height: 20px;
+}
+ 
+.textstyles-title-box span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+}
+ 
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+ 
+.textstyles-close-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+ 
+.textstyles-close-btn:hover {
+  background: #e2e8f0;
+}
+ 
+.textstyles-close-btn img {
+  width: 16px;
+  height: 16px;
+}
+ 
+/* =========================================
+   SEARCH
+========================================= */
+ 
+.textstyles-search-section {
+  position: relative;
+  padding: 0 24px 20px;
+  flex-shrink: 0;
+}
+ 
+.textstyles-search-section input {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid #dbe3ec;
+  background: #f8fafc;
+  padding-left: 20px;
+  padding-right: 52px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+ 
+.textstyles-search-section input:focus {
+  border-color: #94a3b8;
+}
+ 
+.textstyles-search-section input::placeholder {
+  color: #94a3b8;
+}
+ 
+.textstyles-search-icon {
+  position: absolute;
+  right: 42px;
+  top: 50%;
+  transform: translateY(-70%);
+  width: 18px;
+  height: 18px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+ 
+/* =========================================
+   COLOR PICKER
+========================================= */
+ 
+.textstyles-color-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px 14px;
+  flex-shrink: 0;
+}
+ 
+.textstyles-color-picker label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+}
+ 
+.textstyles-color-picker input[type="color"] {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
+ 
+/* =========================================
+   SCROLL BODY
+========================================= */
+ 
+.textstyles-scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 24px 24px;
+}
+ 
+.textstyles-scroll-body::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+.textstyles-scroll-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+ 
+.textstyles-scroll-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+/* =========================================
+   SECTION HEADER
+========================================= */
+ 
+.textstyles-section-header {
+  margin-bottom: 16px;
+}
+ 
+.textstyles-section-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+ 
+/* =========================================
+   GRID
+========================================= */
+ 
+.textstyles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 8px;
+}
+ 
+/* =========================================
+   CARD
+========================================= */
+ 
+.textstyles-card {
+  height: 140px;
+  min-height: 140px;
+  background: #f5f5f7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+ 
+.textstyles-card:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+ 
+/* =========================================
+   CARD INNER
+========================================= */
+ 
+.textstyles-card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+   overflow: hidden;
+}
+/* =========================================
+   MAIN TEXT
+========================================= */
+ 
+.textstyles-card-text {
+  line-height: 1;
+  white-space: pre-line;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
+  max-width: 100%;
+  text-align: center;
+  transform-origin: center;
+}
+ 
+/* secondary text */
+.secondary {
+  margin-top: 8px;
+  line-height: 1;
+}
+ 
+/* FIRE AWAY styling */
+.fire-main {
+  transform: rotate(-10deg);
+  margin-bottom: -6px;
+}
+ 
+.fire-secondary {
+  transform: rotate(-10deg);
+}
+ 
+/* =========================================
+   FIX LARGE FONTS FROM DB
+========================================= */
+ 
+.textstyles-card-text.large-font {
+  transform: scale(0.78);
+}
+ 
+.textstyles-card-text.medium-font {
+  transform: scale(0.88);
+}
+ 
+ 
+/* =========================================
+   EDIT INPUT
+========================================= */
+ 
+.textstyles-edit-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  color: #0f172a;
+  padding: 0 4px;
+}
+ 
+/* =========================================
+   DARK THEME
+========================================= */
+ 
+.editor.dark .textstyles-dropdown-menu {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+}
+ 
+.editor.dark .textstyles-title-box span {
+  color: #f8fafc;
+}
+ 
+.editor.dark .textstyles-close-btn {
+  background: #1e293b;
+}
+ 
+.editor.dark .textstyles-close-btn:hover {
+  background: #334155;
+}
+ 
+.editor.dark .textstyles-search-section input {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+}
+ 
+.editor.dark .textstyles-search-section input::placeholder {
+  color: #94a3b8;
+}
+ 
+.editor.dark .textstyles-section-label {
+  color: #f8fafc;
+}
+ 
+.editor.dark .textstyles-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+ 
+.editor.dark .textstyles-card:hover {
+  background: #334155;
+  border-color: #475569;
+}
+ 
+.editor.dark .textstyles-edit-input {
+  color: #f8fafc;
+}
+ 
+.editor.dark .textstyles-scroll-body::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+ 
+/* =========================================
+   RESPONSIVE
+========================================= */
+ 
+@media (max-width: 768px) {
+  .textstyles-dropdown-menu {
+    width: calc(100vw - 40px);
+    left: 20px;
+    transform: none;
+    top: 10px;
+  }
+}

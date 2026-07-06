@@ -1,0 +1,16 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="300"
+  height="300"
+  viewBox="0 0 300 300"
+  fill="none"
+>
+  
+          <rect x="60" y="60" width="150" height="150"
+            fill="#EC4899" opacity="0.6"/>
+
+          <rect x="90" y="90" width="150" height="150"
+            fill="#EC4899" opacity="0.3"/>
+        
+</svg>

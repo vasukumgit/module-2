@@ -1,0 +1,23 @@
+/* =========================
+    SEARCH BAR COMPONENT
+ ========================= */
+
+/* Search */
+.search-bar {
+  position: relative;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 24px 8px 24px;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  outline: none;
+  top: 24px;
+  left: 24px;
+  height: 56px;
+}
