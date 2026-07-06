@@ -44,7 +44,7 @@ function LoginEmail() {
     try {
       // Check user
       const checkRes = await fetch(
-        "http://localhost:5050/api/auth/check-user",
+        "/api/auth/check-user",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
