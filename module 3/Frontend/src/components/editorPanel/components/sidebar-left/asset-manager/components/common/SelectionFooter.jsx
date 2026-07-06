@@ -4,7 +4,7 @@ import move from "../../../../../../../assets/editor-panel/assets-panel/move.png
 import download from "../../../../../../../assets/editor-panel/assets-panel/download.png";
 import box from "../../../../../../../assets/editor-panel/assets-panel/box.png";
 import dell from "../../../../../../../assets/editor-panel/assets-panel/dell.png";
-import xsymbol from "../../../../../../../assets/editor-panel/assets-panel/xsymbol.png";
+import xsymbol from "../../../../../../../assets/editor-panel/assets-panel/Xsymbol.png";
 
 function SelectionFooter({
   selectedCount,
