@@ -66,7 +66,7 @@ function LoginEmail() {
       }
 
       // Existing user → Send OTP
-      const otpRes = await fetch("http://localhost:5050/api/auth/send-otp", {
+      const otpRes = await fetch("/api/auth/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
