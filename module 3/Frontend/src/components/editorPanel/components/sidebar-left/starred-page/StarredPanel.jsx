@@ -66,7 +66,7 @@ function StarredPanel({ onClose }) {
   const user_id = tokenUser.id;
 
   const API = axios.create({
-    baseURL: "http://localhost:5050/api",
+    baseURL: "/api",
   });
 
   // ==========================================
@@ -124,7 +124,7 @@ function StarredPanel({ onClose }) {
     e.stopPropagation();
 
     try {
-       await axios.delete(`http://localhost:5050/api/starred`, {
+       await axios.delete(`/api/starred`, {
                 data: {
                   user_id: user_id,
                   item_id: item.id,
