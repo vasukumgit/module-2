@@ -68,7 +68,7 @@ const ProfileSetting = () => {
   const fetchProfile = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5050/api/profile-settings",
+        "/api/profile-settings",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -118,7 +118,7 @@ const ProfileSetting = () => {
   const sendOldPhoneOtp = async () => {
     try {
       await axios.post(
-        "http://localhost:5050/api/auth/send-otp",
+        "/api/auth/send-otp",
         { phone }, // OLD phone
         {
           headers: {
@@ -139,7 +139,7 @@ const ProfileSetting = () => {
 
     try {
       await axios.post(
-        "http://localhost:5050/api/profile-settings/verify-old-phone",
+        "/api/profile-settings/verify-old-phone",
         { otp: otpValue },
         {
           headers: {
@@ -180,7 +180,7 @@ const ProfileSetting = () => {
 
     try {
       await axios.post(
-        "http://localhost:5050/api/profile-settings/verify-old-email",
+        "/api/profile-settings/verify-old-email",
         { otp: otpValue },
         {
           headers: {
@@ -203,7 +203,7 @@ const ProfileSetting = () => {
         type === "email" ? { email: newemail } : { phone: newphone };
 
       const res = await axios.post(
-        "http://localhost:5050/api/profile-settings/request-update",
+        "/api/profile-settings/request-update",
         payload,
         {
           headers: {
@@ -234,7 +234,7 @@ const ProfileSetting = () => {
 
     try {
       await axios.post(
-        "http://localhost:5050/api/profile-settings/verify-update",
+        "/api/profile-settings/verify-update",
         { otp: otpValue },
         {
           headers: {
@@ -267,7 +267,7 @@ const ProfileSetting = () => {
   // Disconnect google
   const disconnectGoogle = async () => {
     try {
-      await axios.delete("http://localhost:5050/api/profile-settings");
+      await axios.delete("/api/profile-settings");
       alert("Disconnected Successfully");
       setgoogledisconnect(false);
     } catch (err) {
@@ -281,7 +281,7 @@ const ProfileSetting = () => {
     const updateProfile = async () => {
       try {
         await axios.put(
-          "http://localhost:5050/api/profile-settings",
+          "/api/profile-settings",
           {
             name,
             role,
