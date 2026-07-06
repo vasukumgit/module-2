@@ -5,7 +5,7 @@ import ShapesDropdown from "./object-dropdown/ShapesDropdown";
 import PhotoDropdown from "./object-dropdown/photos-panel/PhotoDropdown";
 import Graphics from "./object-dropdown/graphics-folder/Graphics";
 import ChartsDropdown from "./object-dropdown/charts-dropdown/ChartsDropdown";
-import TextStyles from "./text-styles/TextStyles";
+import TextStyles from "./Text-Styles/TextStyles";
 import StarredPanel from "./starred-page/StarredPanel";
 import AssetsPanel from "./asset-manager/pages/AssetsPanel";
 
