@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./AboutApp.css";
-import StarImage from "../../../../assets/AccountCentre/star.svg";
+import StarImage from "../../../../assets/AccountCentre/Star.svg";
 import Logo from "../../../../assets/logo.png";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
