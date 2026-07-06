@@ -15,7 +15,7 @@ const AppSetting = () => {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const res = await axios.get("http://localhost:5050/api/appsetting", {
+        const res = await axios.get("/api/appsetting", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -53,7 +53,7 @@ const AppSetting = () => {
         setExportQuality(updatedData.export_quality);
       if (updatedData.app_language) setLanguage(updatedData.app_language);
 
-      await axios.put("http://localhost:5050/api/appsetting", payload, {
+      await axios.put("/api/appsetting", payload, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
