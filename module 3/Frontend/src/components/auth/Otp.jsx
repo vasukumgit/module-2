@@ -46,7 +46,7 @@ function Otp() {
     if (!canResend) return;
 
     try {
-      const res = await fetch("http://localhost:5050/api/auth/resend-otp", {
+      const res = await fetch("/api/auth/resend-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, phone }),
@@ -72,7 +72,7 @@ function Otp() {
 
     const enteredOtp = otpInputs.join("");
     try {
-      const res = await fetch("http://localhost:5050/api/auth/verify-otp", {
+      const res = await fetch("/api/auth/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, phone, otp: enteredOtp }),
