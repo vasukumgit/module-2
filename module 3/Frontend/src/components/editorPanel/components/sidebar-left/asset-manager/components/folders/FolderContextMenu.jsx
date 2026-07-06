@@ -1,4 +1,4 @@
-import Pencil from "../../../../../../../assets/editor-panel/assets-panel/pencil.svg";
+import Pencil from "../../../../../../../assets/editor-panel/assets-panel/Pencil.svg";
 import Details from "../../../../../../../assets/editor-panel/assets-panel/Details.svg";
 import Move from "../../../../../../../assets/editor-panel/assets-panel/Move.svg";
 import Download from "../../../../../../../assets/editor-panel/assets-panel/download.svg";
