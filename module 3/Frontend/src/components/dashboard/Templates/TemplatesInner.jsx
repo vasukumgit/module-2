@@ -80,7 +80,7 @@ function TemplatesInner({
       );
 
       const response = await axios.post(
-        "http://localhost:5050/api/cloud-status",
+        "/api/cloud-status",
         {
           title: template.title,
           template_id: template.id,
