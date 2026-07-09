@@ -68,12 +68,12 @@ const Workspace = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const ownedRes = await axios.get("http://localhost:5050/api/projects", {
+      const ownedRes = await axios.get("/api/projects", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       const sharedRes = await axios.get(
-        "http://localhost:5050/api/collaboration/shared-with-me",
+        "/api/collaboration/shared-with-me",
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -147,7 +147,7 @@ const Workspace = () => {
 
       await Promise.all(
         ownedOnlyIds.map((id) =>
-          axios.delete(`http://localhost:5050/api/projects/${id}`, {
+          axios.delete(`/api/projects/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ),
