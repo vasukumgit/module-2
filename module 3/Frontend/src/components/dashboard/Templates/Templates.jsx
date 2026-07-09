@@ -75,7 +75,7 @@ const openEditor = async (template) => {
  
     const response = await axios.post(
  
-      "http://localhost:5050/api/cloud-status",
+      "/api/cloud-status",
  
       {
  
@@ -160,7 +160,7 @@ const openEditor = async (template) => {
       setLoading(true);
       try {
         const res = await axios.get(
-          "http://localhost:5050/api/templates",
+          "/api/templates",
         );
         setTemplates(res.data.templates || []);
         console.log(res.data.data)
@@ -211,7 +211,7 @@ const openEditor = async (template) => {
       if (!query) return fetchTemplates();
  
       const res = await axios.get(
-        `http://localhost:5050/api/templates/search?search=${query}`
+        `/api/templates/search?search=${query}`
       );
  
       setTemplates(res.data.data || res.data);
@@ -232,7 +232,7 @@ const openEditor = async (template) => {
  
       const res = await axios.get(
  
-        `http://localhost:5050/api/templates/filter?category=${category}`
+        `/api/templates/filter?category=${category}`
  
       );
  
