@@ -20,7 +20,7 @@ function ProfilePage() {
 
       try {
         const res = await axios.get(
-          "http://localhost:5050/api/profile",
+          "/api/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -49,7 +49,7 @@ function ProfilePage() {
 
     try {
       await axios.put(
-        "http://localhost:5050/api/profile",
+        "/api/profile",
         {
           full_name: profileData.full_name,
           profile_image: profileData.profile_image,
