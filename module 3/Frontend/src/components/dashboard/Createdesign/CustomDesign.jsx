@@ -45,7 +45,7 @@ export default function CustomDesign() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:5050/api/designs/folders", {
+      const res = await axios.get("/api/designs/folders", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -68,7 +68,7 @@ export default function CustomDesign() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5050/api/designs/folders",
+        "/api/designs/folders",
         { name: folderName },
         { headers: { Authorization: `Bearer ${token}` } },
       );
@@ -104,7 +104,7 @@ export default function CustomDesign() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5050/api/cloud-status",
+        "/api/cloud-status",
         {
           title: projectName,
           name: projectName,
