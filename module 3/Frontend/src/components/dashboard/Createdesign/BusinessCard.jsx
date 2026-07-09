@@ -32,7 +32,7 @@ const payload = {
 };
  console.log("Sending Payload:", payload);
       const res = await axios.post(
-        "http://localhost:5050/api/cloud-status",
+        "/api/cloud-status",
          payload,
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
@@ -53,7 +53,7 @@ const payload = {
         ? template.dimensions.toLowerCase().replace("px", "").split("x").map(v => parseInt(v.trim()))
         : [1050, 600];
       const res = await axios.post(
-        "http://localhost:5050/api/designs",
+        "/api/designs",
         {
           name: template.title,
           width,
