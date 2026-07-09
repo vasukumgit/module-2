@@ -47,7 +47,7 @@ function Notifications({ isOverlay, setShowNotification }) {
   const handleMarkAsRead = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:5050/api/notifications/${id}/read`,
+        `/api/notifications/${id}/read`,
         {},
         {
           headers: {
@@ -264,7 +264,7 @@ function Notifications({ isOverlay, setShowNotification }) {
 
       await Promise.all(
         selectedNotifications.map((id) =>
-          axios.delete(`http://localhost:5050/api/notifications/${id}`, {
+          axios.delete(`/api/notifications/${id}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -300,7 +300,7 @@ function Notifications({ isOverlay, setShowNotification }) {
       await Promise.all(
         selectedNotifications.map((id) =>
           axios.put(
-            `http://localhost:5050/api/notifications/${id}/read`,
+            `/api/notifications/${id}/read`,
             {},
             {
               headers: {
@@ -399,7 +399,7 @@ function Notifications({ isOverlay, setShowNotification }) {
   const handleAcceptRequest = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:5050/api/notifications/${id}/accept`,
+        `/api/notifications/${id}/accept`,
         {},
         {
           headers: {
@@ -419,7 +419,7 @@ function Notifications({ isOverlay, setShowNotification }) {
   const handleRejectRequest = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:5050/api/notifications/${id}/reject`,
+        `/api/notifications/${id}/reject`,
         {},
         {
           headers: {
