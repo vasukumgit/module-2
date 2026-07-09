@@ -115,7 +115,7 @@ const openEditor = async (template) => {
  
     // );
     await axios.post(
-  `http://localhost:5050/api/templates/${template.id}/use`
+  `/api/templates/${template.id}/use`
 );
  
     const designId = response.data.data.design_id;
