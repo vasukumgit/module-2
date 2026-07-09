@@ -24,7 +24,7 @@ export default function Presentation() {
       
        console.log("Sending Payload:", payload);
             const res = await axios.post(
-              "http://localhost:5050/api/cloud-status",
+              "/api/cloud-status",
                payload,
               { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
             );
