@@ -60,7 +60,7 @@ export default function SearchBar({ token }) {
     typingTimeoutRef.current = setTimeout(
       async () => {
         try {
-          const response = await axios.get("http://localhost:5050/api/search", {
+          const response = await axios.get("/api/search", {
             params: { q: query },
             headers: {
               Authorization: `Bearer ${token}`,
