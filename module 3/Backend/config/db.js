@@ -2,7 +2,7 @@ const mysql = require("mysql2/promise");
 require("dotenv").config();
 
 const db = mysql.createPool({
-  host: "localhost",
+  host: "",
   user: "root",
   password: "stackly123",
   database: "stackly_db",
